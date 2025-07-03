@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "survivors": {
+      "text": "Survivors",
+      "ariaLabel": "Button for information of the survivors"
+    },  
+    "common": {
+      "dbdlogo_alt": "Dead by daylight logotype"
+    },
+    "killers": {
+      "text": "Killers",
+      "ariaLabel": "Button for Information of the killers"
+    },
+    "makeYourOwnBuild": {
+      "text": "Make your own build",
+      "ariaLabel": "Section to try different perk builds"
+    }
+  },
+  "notFoundPage": {
+    "message": "This page doesn't exist!",
+    "homeButtonText": "Take me to main page"
+  }
+}

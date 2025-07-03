@@ -14,6 +14,9 @@
     "makeYourOwnBuild": {
       "text": "Make your own build",
       "ariaLabel": "Section to try different perk builds"
+    },
+    "selector": {
+      "label": "Language switcher"
     }
   },
   "notFoundPage": {

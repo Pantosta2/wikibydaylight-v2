@@ -1,9 +1,6 @@
-// EN: hooks/useCombinedRolePerks.ts
-
 "use client"
 
 import { useState, useEffect } from "react";
-// 1. Importa la función con la lógica extraída.
 import { fetchAllPerksForRole } from "../services/GeneralGetService";
 import type { Perk } from "../Types/GeneralTypes";
 
@@ -18,7 +15,6 @@ export function useCombinedRolePerks({ role, enabled }: { role: "killer" | "surv
     const loadData = async () => {
       setIsLoading(true);
       try {
-        // 2. El hook ahora solo llama a la lógica reutilizable.
         const data = await fetchAllPerksForRole(role);
         setPerks(data);
       } catch (e) {

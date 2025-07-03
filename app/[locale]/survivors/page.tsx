@@ -9,10 +9,10 @@ export default async function SurvivorsPage() {
 
   return (
     <div className="absolute h-screen w-full overflow-x-hidden">
-      <figure
-        className="absolute inset-0 bg-cover bg-center z-10"
+      <div
+        className="absolute inset-0 bg-cover bg-center z-30"
         style={{
-          backgroundImage: `url(${DefinedImagesForBackground.Kitchen})`,
+          backgroundImage: `url(${DefinedImagesForBackground.Kitchen.src})`,
         }}
       >
         <Image
@@ -29,7 +29,7 @@ export default async function SurvivorsPage() {
           initialCharacters={initialSurvivor}
           characterRole="survivor"
         />
-      </figure>
+      </div>
     </div>
   );
 }

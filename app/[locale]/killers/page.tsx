@@ -9,10 +9,10 @@ export default async function KillersPage() {
 
   return (
     <div className="absolute h-screen w-full overflow-x-hidden">
-      <figure
+      <div
         className="absolute inset-0 bg-cover bg-center z-10"
         style={{
-          backgroundImage: `url(${DefinedImagesForBackground.GardenOfJoy})`,
+          backgroundImage: `url(${DefinedImagesForBackground.GardenOfJoy.src})`,
         }}
       >
         <Image
@@ -29,7 +29,7 @@ export default async function KillersPage() {
           initialCharacters={initialKillers}
           characterRole="killer"
         />
-      </figure>
+      </div>
     </div>
   );
 }

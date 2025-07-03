@@ -11,7 +11,7 @@ export default function Navbar() {
   const t = useTranslations("nav");
 
   return (
-    <nav className="absolute w-screen general-scrollbar font-bold z-30">
+    <nav className="absolute w-screen general-scrollbar font-bold z-40">
       <ul className="flex flex-row items-center justify-center p-2 w-full">
         <li className="flex flex-4">
           <Link href="/">

@@ -1,11 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import NavButtonLink from "@/components/NavButtonLink";
+import NavButtonLink from "@/components/layout/NavButtonLink";
 import Image from "next/image";
 import Link from "next/link";
 import DbdLogo from "@/public/DbdLogo.png";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 export default function Navbar() {
   const t = useTranslations("nav");

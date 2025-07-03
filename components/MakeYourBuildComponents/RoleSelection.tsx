@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 type RoleForSelection = "survivor" | "killer";
 
 interface RoleSelectionProps {
@@ -11,7 +11,7 @@ const RoleSelection: React.FC<RoleSelectionProps> = ({
   currentRole,
   onRoleChange,
 }) => {
-  const { t } = useTranslation();
+  const t = useTranslations("makeYourBuild");
 
   return (
     <div className="flex justify-center items-center mb-6 space-x-3 sm:space-x-4">
@@ -24,7 +24,7 @@ const RoleSelection: React.FC<RoleSelectionProps> = ({
             : "bg-gray-700 text-gray-300 hover:bg-gray-600"
         }`}
       >
-        {t("makeYourBuild.roles.survivorPerks", "Survivor Perks")}
+        {t("roles.survivorPerks")}
       </button>
       <button
         onClick={() => onRoleChange("killer")}
@@ -35,7 +35,7 @@ const RoleSelection: React.FC<RoleSelectionProps> = ({
             : "bg-gray-700 text-gray-300 hover:bg-gray-600"
         }`}
       >
-        {t("makeYourBuild.roles.killerPerks", "Killer Perks")}
+        {t("roles.killerPerks")}
       </button>
     </div>
   );

@@ -3,7 +3,10 @@ import DisplayCharacterData from "@/components/CharactersStaticData/DisplayChara
 import { getKillers } from "@/services/GeneralGetService";
 import Image from "next/image";
 
-export default function KillersPage() {
+export default async function KillersPage() {
+  const killersResponse = await getKillers();
+  const initialKillers = killersResponse.data.data || [];
+
   return (
     <div className="absolute h-screen w-full overflow-x-hidden">
       <figure
@@ -23,7 +26,7 @@ export default function KillersPage() {
           className="absolute -bottom-40 w-full scale-160 z-10"
         />
         <DisplayCharacterData
-          fetchFunction={getKillers}
+          initialCharacters={initialKillers}
           characterRole="killer"
         />
       </figure>

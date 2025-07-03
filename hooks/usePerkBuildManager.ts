@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import type { Perk } from '../Types/GeneralTypes'; 
 
 type RoleForSelection = "survivor" | "killer";
@@ -25,7 +25,7 @@ export function usePerkBuildManager({
   errorKillers,
   maxPerks = 4,
 }: UsePerkBuildManagerProps) {
-  const { t } = useTranslation(); 
+  const t = useTranslations("makeYourBuild"); 
   const [selectedPerks, setSelectedPerks] = useState<Perk[]>([]);
   const [currentRoleToList, setCurrentRoleToList] =
     useState<RoleForSelection>("survivor");
@@ -37,7 +37,7 @@ export function usePerkBuildManager({
         return prevSelectedPerks;
       }
       if (prevSelectedPerks.length >= maxPerks) {
-        alert(t('makeYourBuild.alerts.perkLimitReached', `You have reached the ${maxPerks} perk limit.`));
+        alert(t('alerts.perkLimitReached', {maxPerks}));
         return prevSelectedPerks;
       }
       return [...prevSelectedPerks, perkToAdd];

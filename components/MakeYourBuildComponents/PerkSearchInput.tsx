@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 interface PerkSearchInputProps {
   searchQuery: string;
@@ -10,7 +10,7 @@ const PerkSearchInput: React.FC<PerkSearchInputProps> = ({
   searchQuery,
   onSearchChange,
 }) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <div className="mb-6 max-w-lg mx-auto">
@@ -18,7 +18,6 @@ const PerkSearchInput: React.FC<PerkSearchInputProps> = ({
         type="text"
         placeholder={t(
           "makeYourBuild.search.placeholder",
-          "Search perk by name, description..."
         )}
         value={searchQuery}
         onChange={onSearchChange}

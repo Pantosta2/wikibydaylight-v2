@@ -1,32 +1,16 @@
-import type { AxiosResponse } from "axios";
-import type {
-  CharacterProfileData,
-  CharacterListEnvelope,
-} from "../../services/GeneralGetService";
-import { useCharacterList } from "../../hooks/useCharacterList";
+"use client";
+
+import type { CharacterProfileData } from "../../services/GeneralGetService";
 
 type PortraitListProps = {
-  fetchFunction: () => Promise<AxiosResponse<CharacterListEnvelope>>;
+  characters: CharacterProfileData[];
   onButtonClick: (characterData: CharacterProfileData) => void;
 };
 
 export default function PortraitCharacterList({
-  fetchFunction,
+  characters,
   onButtonClick,
 }: PortraitListProps) {
-  const { characters, errorList, isLoadingList } =
-    useCharacterList(fetchFunction);
-
-  if (isLoadingList) {
-    return (
-      <p className="text-blue-500 text-center mt-10">Loading characters...</p>
-    );
-  }
-
-  if (errorList) {
-    return <p className="text-red-500 text-center mt-10">{errorList}</p>;
-  }
-
   if (!characters || characters.length === 0) {
     return (
       <p className="text-gray-500 text-center mt-10">No characters found.</p>

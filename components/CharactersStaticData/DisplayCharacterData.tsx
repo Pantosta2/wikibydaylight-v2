@@ -1,4 +1,5 @@
-import type { AxiosResponse } from "axios";
+"use client";
+
 import PortraitCharacterList from "./PortraitCharacterList";
 import PerkDisplayList from "./PerkDisplayList";
 import KillerDetailsDisplay from "./KillerDetailsDisplay";
@@ -6,19 +7,16 @@ import SurvivorDetailsDisplay from "./SurvivorDetailsDisplay";
 import { useModal } from "../../hooks/useModal";
 import { useCharacterPerks } from "../../hooks/useCharacterPerks";
 import { useKillerPower } from "../../hooks/useKillerPower";
-import type {
-  CharacterProfileData,
-  CharacterListEnvelope,
-} from "../../services/GeneralGetService";
+import type { CharacterProfileData } from "../../services/GeneralGetService";
 import type { KillerApiData, SurvivorApiData } from "../../Types/GeneralTypes";
 
 type DisplayCharacterDataProps = {
-  fetchFunction: () => Promise<AxiosResponse<CharacterListEnvelope>>;
+  initialCharacters: CharacterProfileData[];
   characterRole: "killer" | "survivor";
 };
 
 export default function DisplayCharacterData({
-  fetchFunction,
+  initialCharacters,
   characterRole,
 }: DisplayCharacterDataProps) {
   const {
@@ -56,7 +54,7 @@ export default function DisplayCharacterData({
     <>
       <PortraitCharacterList
         onButtonClick={handlePortraitClick}
-        fetchFunction={fetchFunction}
+        characters={initialCharacters}
       />
 
       {isModalOpen && selectedCharacter && (

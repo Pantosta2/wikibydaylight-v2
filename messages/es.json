@@ -25,7 +25,7 @@
   },
   "makeYourBuild": {
     "header": {
-      "selectInstruction": "Selecciona hasta {{maxPerks}} ventajas ({{selectedCount}}/{{maxPerks}}). Haz clic en una ventaja de la lista para añadirla."
+      "selectInstruction": "Selecciona hasta {maxPerks} ventajas ({selectedCount}/{maxPerks}). Haz clic en una ventaja de la lista para añadirla."
     },
     "roles": {
       "survivorPerks": "Ventajas de Superviviente",

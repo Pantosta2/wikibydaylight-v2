@@ -3,7 +3,10 @@ import { getSurvivors } from "@/services/GeneralGetService";
 import DisplayCharacterData from "@/components/CharactersStaticData/DisplayCharacterData";
 import Image from "next/image";
 
-export default function SurvivorsPage() {
+export default async function SurvivorsPage() {
+  const killersResponse = await getSurvivors();
+  const initialSurvivor = killersResponse.data.data || [];
+
   return (
     <div className="absolute h-screen w-full overflow-x-hidden">
       <figure
@@ -23,7 +26,7 @@ export default function SurvivorsPage() {
           className="absolute -bottom-40 w-full scale-160 z-10"
         />
         <DisplayCharacterData
-          fetchFunction={getSurvivors}
+          initialCharacters={initialSurvivor}
           characterRole="survivor"
         />
       </figure>

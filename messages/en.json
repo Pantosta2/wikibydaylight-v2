@@ -2,25 +2,61 @@
   "nav": {
     "survivors": {
       "text": "Survivors",
-      "ariaLabel": "Button for information of the survivors"
-    },  
-    "common": {
-      "dbdlogo_alt": "Dead by daylight logotype"
+      "ariaLabel": "Button for information about survivors"
     },
     "killers": {
       "text": "Killers",
-      "ariaLabel": "Button for Information of the killers"
+      "ariaLabel": "Button for information about killers"
     },
     "makeYourOwnBuild": {
-      "text": "Make your own build",
-      "ariaLabel": "Section to try different perk builds"
+      "text": "Create your own build",
+      "ariaLabel": "Section to test different perk builds"
+    },
+    "common": {
+      "dbdlogo_alt": "Dead by Daylight Logo"
     },
     "selector": {
-      "label": "Language switcher"
+      "label": "Language selector"
     }
   },
   "notFoundPage": {
-    "message": "This page doesn't exist!",
-    "homeButtonText": "Take me to main page"
+    "message": "This page does not exist!",
+    "homeButtonText": "Take me to the main page"
+  },
+  "mainPage": {
+    "title": "Welcome to the Fog",
+    "aboutTitle": "What is Dead by Daylight?",
+    "aboutText": "Dead by Daylight is an asymmetrical multiplayer (4 vs 1) horror game where one player takes on the role of a ruthless Killer, and the other four play as Survivors. The goal is simple: Survivors must try to escape the Killer, avoiding being caught, tortured, and killed. To do this, they must repair five generators spread across the map to power the exit gates and escape.",
+    "survivorTitle": "The Survivor's Role",
+    "survivorText": "As a Survivor, your main objective is cooperation and stealth. You must work with the other three survivors to repair the generators and escape. Survival can depend on collaborative or selfish decisions. Every choice counts, and the procedurally generated environment changes in each match, so you'll never feel completely safe.",
+    "survivorPoints": {
+      "point1": "Repair generators: The main task to be able to escape.",
+      "point2": "Outsmart the Killer: Use the environment, pallets, and windows to buy time during a chase.",
+      "point3": "Rescue your teammates: Save other survivors from the killer's hooks to keep the team alive.",
+      "point4": "Use perks: Each survivor has unique perks that can be customized to fit your survival strategy."
+    },
+    "killerTitle": "The Killer's Role",
+    "killerText": "As a Killer, your mission is to hunt, capture, and sacrifice the Survivors for a malevolent force known as 'The Entity.' Each Killer, from a powerful slasher to terrifying paranormal entities, possesses a unique power. Mastering this power, along with the game's mechanics, is key to victory.",
+    "killerPoints": {
+      "point1": "Hunt the Survivors: Patrol generators, look for scratch marks, and listen for sounds to find your prey.",
+      "point2": "Use your unique power: Each killer has special abilities, such as traps, invisibility, or ranged attacks, that define their playstyle.",
+      "point3": "Sacrifice: Hook survivors to sacrifice them to The Entity and eliminate them from the match.",
+      "point4": "Map control: Pressure survivors, damage generators, and prevent them from completing their objective."
+    }
+  },
+  "makeYourBuild": {
+    "header": {
+      "selectInstruction": "Select up to {maxPerks} perks ({selectedCount}/{maxPerks}). Click a perk from the list to add it."
+    },
+    "roles": {
+      "survivorPerks": "Survivor Perks",
+      "killerPerks": "Killer Perks"
+    },
+    "search": {
+      "placeholder": "Search perk by name, description..."
+    },
+    "alerts": {
+      "perkLimitReached": "You have reached the perk limit."
+    }
   }
 }

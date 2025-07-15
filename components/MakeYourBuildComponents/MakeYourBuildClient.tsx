@@ -1,15 +1,15 @@
 "use client";
 
-import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
 import { usePerkBuildManager } from "@/hooks/usePerkBuildManager";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import type { Perk } from "@/Types/GeneralTypes";
+import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
 
 import SelectedPerksRhombus from "./SelectedPerksRhombus";
 import RoleSelection from "./RoleSelection";
 import PerkSearchInput from "./PerkSearchInput";
 import PerkListDisplay from "./PerkListDisplay";
+import Image from "next/image";
 
 interface MakeYourBuildClientProps {
   initialSurvivorPerks: Perk[];
@@ -46,20 +46,18 @@ export default function MakeYourBuildClient({
 
   return (
     <>
-      <div className="relative min-h-screen w-full overflow-x-hidden bg-gray-900">
-        <figure
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{
-            backgroundImage: `url(${DefinedImagesForBackground.RedForest})`,
-            opacity: 0.25,
-          }}
-        />
-        <Image
-          src={DefinedImagesForBackground.Fog}
-          alt=""
-          className="absolute -bottom-20 md:-bottom-40 w-full object-cover z-0 opacity-40"
-        />
+      <div className="relative min-h-screen w-full overflow-x-hidden bg-gray-900/50">
         <div className="relative z-10 flex flex-col min-h-screen">
+          <Image
+            src={DefinedImagesForBackground.Fog}
+            alt=""
+            className="absolute -bottom-40 w-full scale-160 -z-10"
+          />
+          <Image
+            src={DefinedImagesForBackground.Fog}
+            alt=""
+            className="absolute -bottom-40 w-full scale-160 -z-10"
+          />
           <main className="flex-grow px-4 py-10 sm:px-6 md:px-8 flex flex-col">
             <header className="text-center mb-8 mt-6">
               <p className="text-md sm:text-lg text-gray-300 mt-3 max-w-2xl mx-auto">

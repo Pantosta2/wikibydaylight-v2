@@ -10,9 +10,9 @@ export default async function MakeYourOwnBuildPage() {
 
   return (
     <div
-      className="absolute inset-0 bg-cover bg-center z-20"
+      className="sticky inset-0 bg-cover bg-center z-20"
       style={{
-        backgroundImage: `url(${DefinedImagesForBackground.Kitchen.src})`,
+        backgroundImage: `url(${DefinedImagesForBackground.RedForest.src})`,
       }}
     >
       <MakeYourBuildClient

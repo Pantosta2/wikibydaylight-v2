@@ -1,28 +1,52 @@
 {
-  "common": {
-    "dbdlogo_alt": "Logo de Dead by Daylight"
-  },
   "nav": {
     "survivors": {
       "text": "Survivants",
-      "ariaLabel": "Bouton d'information sur les survivants"
+      "ariaLabel": "Bouton pour les informations sur les survivants"
     },
     "killers": {
       "text": "Tueurs",
-      "ariaLabel": "Bouton d'information sur les tueurs"
+      "ariaLabel": "Bouton pour les informations sur les tueurs"
     },
     "makeYourOwnBuild": {
-      "text": "Créez votre propre configuration",
-      "ariaLabel": "Section pour essayer différentes configurations de compétences" 
+      "text": "Créez votre propre build",
+      "ariaLabel": "Section pour tester différentes configurations de compétences"
+    },
+    "common": {
+      "dbdlogo_alt": "Logo de Dead by Daylight"
+    },
+    "selector": {
+      "label": "Sélecteur de langue"
     }
-  },  
+  },
   "notFoundPage": {
     "message": "Cette page n'existe pas !",
-    "homeButtonText": "Retourner à la page d'accueil"
+    "homeButtonText": "Ramenez-moi à la page d'accueil"
+  },
+  "mainPage": {
+    "title": "Bienvenue dans le Brouillard",
+    "aboutTitle": "Qu'est-ce que Dead by Daylight ?",
+    "aboutText": "Dead by Daylight est un jeu d'horreur multijoueur asymétrique (4 contre 1) dans lequel un joueur incarne un Tueur impitoyable et les quatre autres jouent en tant que Survivants. L'objectif est simple : les Survivants doivent tenter d'échapper au Tueur, en évitant d'être capturés, torturés et tués. Pour ce faire, ils doivent réparer cinq générateurs répartis sur la carte pour alimenter les portes de sortie et s'échapper.",
+    "survivorTitle": "Le Rôle du Survivant",
+    "survivorText": "En tant que Survivant, votre objectif principal est la coopération et la discrétion. Vous devez collaborer avec les trois autres survivants pour réparer les générateurs et vous échapper. La survie peut dépendre de décisions collaboratives ou égoïstes. Chaque choix compte, et l'environnement, généré de manière procédurale, change à chaque partie, vous ne vous sentirez donc jamais complètement en sécurité.",
+    "survivorPoints": {
+      "point1": "Réparer les générateurs : La tâche principale pour pouvoir s'échapper.",
+      "point2": "Tromper le Tueur : Utilisez l'environnement, les palettes et les fenêtres pour gagner du temps lors d'une poursuite.",
+      "point3": "Sauver vos coéquipiers : Sauvez les autres survivants des crochets du tueur pour maintenir l'équipe en vie.",
+      "point4": "Utiliser des compétences (perks) : Chaque survivant dispose de compétences uniques qui peuvent être personnalisées pour s'adapter à votre stratégie de survie."
+    },
+    "killerTitle": "Le Rôle du Tueur",
+    "killerText": "En tant que Tueur, votre mission est de chasser, capturer et sacrifier les Survivants à une force malveillante connue sous le nom de 'l'Entité'. Chaque Tueur, d'un slasher puissant à des entités paranormales terrifiantes, possède un pouvoir unique. Maîtriser ce pouvoir, ainsi que les mécanismes du jeu, est la clé de la victoire.",
+    "killerPoints": {
+      "point1": "Chasser les Survivants : Patrouillez près des générateurs, cherchez des marques de griffures et écoutez les sons pour trouver vos proies.",
+      "point2": "Utiliser votre pouvoir unique : Chaque tueur a des capacités spéciales, comme des pièges, l'invisibilité ou des attaques à distance, qui définissent son style de jeu.",
+      "point3": "Sacrifier : Accrochez les survivants à des crochets pour les sacrifier à l'Entité et les éliminer de la partie.",
+      "point4": "Gérer la carte : Mettez la pression sur les survivants, endommagez les générateurs et empêchez-les d'atteindre leur objectif."
+    }
   },
   "makeYourBuild": {
     "header": {
-      "selectInstruction": "Sélectionnez jusqu'à {{maxPerks}} compétences ({{selectedCount}}/{{maxPerks}}). Cliquez sur une compétence dans la liste pour l'ajouter."
+      "selectInstruction": "Sélectionnez jusqu'à {maxPerks} compétences ({selectedCount}/{maxPerks}). Cliquez sur une compétence de la liste pour l'ajouter."
     },
     "roles": {
       "survivorPerks": "Compétences de Survivant",

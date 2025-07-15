@@ -30,7 +30,12 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider
           locale={locale}
-          messages={pick(messages, ["nav"])}
+          messages={pick(messages, [
+            "nav",
+            "mainPage",
+            "notFoundPage",
+            "makeYourBuild",
+          ])}
         >
           <Navbar />
           {children}

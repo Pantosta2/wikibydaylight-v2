@@ -7,9 +7,11 @@ export default async function SurvivorsPage() {
   const killersResponse = await getSurvivors();
   const initialSurvivor = killersResponse.data.data || [];
 
+
+
   return (
     <div className="absolute h-screen w-full overflow-x-hidden">
-      <div
+     <div
         className="absolute inset-0 bg-cover bg-center z-30"
         style={{
           backgroundImage: `url(${DefinedImagesForBackground.Kitchen.src})`,

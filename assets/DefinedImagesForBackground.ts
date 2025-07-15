@@ -4,6 +4,8 @@ import Kitchen from "@/public/DBD_CH_27_kitchen_7c792b40e0.jpg"
 import Haddonfiled from "@/public/haddonfield_realm_lampkinlane_map_9827b7adfc.jpg";
 import RedForest from "@/public/redforrest_realm_templeofpurgation_2_711fda94ea.jpg";
 import Fog from "@/public/Fog.png";
+import KillerMain from "@/public/damien-devaux-dbd-alftd-killer-character-art-Photoroom.png"
+import SurvivorMain from "@/public/rafael-juarez-jr-mikaela01-beauty-Photoroom.png"
 
 export const DefinedImagesForBackground = {
   GardenOfJoy,
@@ -12,4 +14,6 @@ export const DefinedImagesForBackground = {
   Haddonfiled,
   RedForest,
   Fog,
+  KillerMain,
+  SurvivorMain,
 };

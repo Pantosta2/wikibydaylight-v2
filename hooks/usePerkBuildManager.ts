@@ -25,7 +25,7 @@ export function usePerkBuildManager({
   errorKillers,
   maxPerks = 4,
 }: UsePerkBuildManagerProps) {
-  const t = useTranslations("makeYourBuild"); 
+  const t = useTranslations(); 
   const [selectedPerks, setSelectedPerks] = useState<Perk[]>([]);
   const [currentRoleToList, setCurrentRoleToList] =
     useState<RoleForSelection>("survivor");

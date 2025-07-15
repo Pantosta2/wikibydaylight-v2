@@ -1,23 +1,31 @@
-import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
-import Image from "next/image";
+// page.tsx
+import { useTranslations } from "next-intl";
+import { Background } from "@/components/Background"; // Componente de fondo separado
+import { AnimatedRoleSection } from "@/components/AnimatedRoleSection"; // Nuevo componente animado
+
 export default function MainPage() {
+  const t = useTranslations();
+
   return (
-    <div
-      className="bg-cover bg-center h-screen w-full z-0"
-      style={{
-        backgroundImage: `url(${DefinedImagesForBackground.Haddonfiled.src})`,
-      }}
-    >
-      <Image
-        src={DefinedImagesForBackground.Fog}
-        alt=""
-        className="absolute -bottom-40 w-full scale-160 z-10"
-      />
-      <Image
-        src={DefinedImagesForBackground.Fog}
-        alt=""
-        className="absolute -bottom-40 w-full scale-160 z-10"
-      />
+    <div className="flex flex-col overflow-hidden bg-black">
+      <Background />
+
+      <main className="relative z-10">
+        <div className="mx-auto max-w-7xl px-6 py-12 text-white">
+          <h1 className="mb-6 pt-10 text-center text-5xl font-bold tracking-wider text-red-700/80">
+            {t("mainPage.title")}
+          </h1>
+
+          <section className="my-12 text-center">
+            <h2 className="mb-4 border-b-2 border-gray-600 pb-2 text-3xl font-bold">
+              {t("mainPage.aboutTitle")}
+            </h2>
+            <p className="text-lg leading-relaxed">{t("mainPage.aboutText")}</p>
+          </section>
+
+          <AnimatedRoleSection />
+        </div>
+      </main>
     </div>
   );
 }

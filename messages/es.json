@@ -23,6 +23,27 @@
     "message": "¡Esta página no existe!",
     "homeButtonText": "Llévame a la página principal"
   },
+  "mainPage": {
+    "title": "Bienvenido a la Niebla",
+    "aboutTitle": "¿Qué es Dead by Daylight?",
+    "aboutText": "Dead by Daylight es un juego de terror multijugador asimétrico (4 contra 1) en el que un jugador asume el rol de un Asesino despiadado y los otros cuatro juegan como Supervivientes. El objetivo es simple: los Supervivientes deben intentar escapar del Asesino, evitando ser capturados, torturados y asesinados. Para lograrlo, deben reparar cinco generadores repartidos por el mapa para así poder abrir las puertas de salida y escapar.",
+    "survivorTitle": "El Rol del Superviviente",
+    "survivorText": "Como Superviviente, tu principal objetivo es la cooperación y el sigilo. Debes trabajar con los otros tres supervivientes para reparar los generadores y escapar. La supervivencia puede depender de decisiones colaborativas o egoístas. Cada elección cuenta, y el entorno, generado de forma procedural, cambia en cada partida, por lo que nunca te sentirás completamente a salvo.",
+    "survivorPoints": {
+      "point1": "Reparar generadores: La tarea principal para poder escapar.",
+      "point2": "Engañar al Asesino: Usa el entorno, los palés y las ventanas para ganar tiempo durante una persecución.",
+      "point3": "Rescatar a tus compañeros: Salva a otros supervivientes de los ganchos del asesino para mantener al equipo con vida.",
+      "point4": "Usar habilidades (perks): Cada superviviente tiene ventajas únicas que se pueden personalizar para adaptarse a tu estrategia de supervivencia."
+    },
+    "killerTitle": "El Rol del Asesino",
+    "killerText": "Como Asesino, tu misión es cazar, capturar y sacrificar a los Supervivientes para una fuerza malévola conocida como 'La Entidad'. Cada Asesino, desde un acuchillador poderoso hasta entidades paranormales aterradoras, posee un poder único. Dominar este poder, junto con las mecánicas del juego, es clave para la victoria.",
+    "killerPoints": {
+      "point1": "Cazar a los Supervivientes: Patrulla los generadores, busca marcas de arañazos y escucha los sonidos para encontrar a tus presas.",
+      "point2": "Usar tu poder único: Cada asesino tiene habilidades especiales, como trampas, invisibilidad o ataques a distancia, que definen su estilo de juego.",
+      "point3": "Sacrificar: Cuelga a los supervivientes en ganchos para sacrificarlos a La Entidad y eliminarlos de la partida.",
+      "point4": "Gestionar el mapa: Presiona a los supervivientes, daña los generadores y evita que completen su objetivo."
+    }
+  },
   "makeYourBuild": {
     "header": {
       "selectInstruction": "Selecciona hasta {maxPerks} ventajas ({selectedCount}/{maxPerks}). Haz clic en una ventaja de la lista para añadirla."

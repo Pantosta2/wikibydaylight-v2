@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useMessages, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
 import { ScreenBorderGlow, ActiveSide } from "./ScreenBorderGlow";
 
@@ -10,8 +10,6 @@ export function AnimatedRoleSection() {
   const [activeSide, setActiveSide] = useState<ActiveSide>("killer");
   const t = useTranslations("mainPage");
 
-  const messagesInClient = useMessages();
-  console.log("--- MENSAJES EN EL CLIENTE ---", messagesInClient);
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSide((prevSide) =>
@@ -36,8 +34,8 @@ export function AnimatedRoleSection() {
           }`}
         >
           <Image
-            width={500}
-            height={500}
+            width={300}
+            height={100}
             src={DefinedImagesForBackground.SurvivorMain}
             alt="Survivors"
             className="mb-4 drop-shadow-lg"
@@ -62,8 +60,8 @@ export function AnimatedRoleSection() {
           }`}
         >
           <Image
-            width={500}
-            height={500}
+            width={400}
+            height={100}
             src={DefinedImagesForBackground.KillerMain}
             alt="Killers"
             className="mb-4 drop-shadow-lg"

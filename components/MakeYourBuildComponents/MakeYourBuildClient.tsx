@@ -1,6 +1,7 @@
 "use client";
 
-import { usePerkBuildManager } from "@/hooks/usePerkBuildManager";
+import { usePerkFiltering } from "@/hooks/usePerkFiltering";
+import { usePerkSelection } from "@/hooks/usePerkSelection";
 import { useTranslations } from "next-intl";
 import type { Perk } from "@/Types/GeneralTypes";
 import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
@@ -23,26 +24,22 @@ export default function MakeYourBuildClient({
   const t = useTranslations("makeYourBuild");
   const maxPerks = 4;
 
+  const { selectedPerks, handlePerkSelect, handlePerkRemove, isLimitReached } =
+    usePerkSelection({ maxPerks });
+
   const {
-    selectedPerks,
-    currentRoleToList,
+    currentRole,
     searchQuery,
-    handlePerkSelect,
-    handlePerkRemove,
-    handleSearchChange,
     handleRoleChange,
-    filteredPerksToDisplay,
-    isLoadingCurrentList,
-    errorCurrentList,
-  } = usePerkBuildManager({
-    initialSurvivorPerks: initialSurvivorPerks,
-    initialKillerPerks: initialKillerPerks,
-    isLoadingSurvivors: false,
-    isLoadingKillers: false,
-    errorSurvivors: null,
-    errorKillers: null,
-    maxPerks: maxPerks,
+    handleSearchChange,
+    filteredPerks,
+  } = usePerkFiltering({
+    survivorPerks: initialSurvivorPerks,
+    killerPerks: initialKillerPerks,
   });
+
+  const isLoadingCurrentList = false;
+  const errorCurrentList = null;
 
   return (
     <>
@@ -62,7 +59,7 @@ export default function MakeYourBuildClient({
             <header className="text-center mb-8 mt-6">
               <p className="text-md sm:text-lg text-gray-300 mt-3 max-w-2xl mx-auto">
                 {t("header.selectInstruction", {
-                  maxPerks: 4,
+                  maxPerks,
                   selectedCount: selectedPerks.length,
                 })}
               </p>
@@ -75,7 +72,7 @@ export default function MakeYourBuildClient({
 
             <div className="mt-10 pt-8 border-t border-gray-700">
               <RoleSelection
-                currentRole={currentRoleToList}
+                currentRole={currentRole}
                 onRoleChange={handleRoleChange}
               />
               <PerkSearchInput
@@ -84,12 +81,12 @@ export default function MakeYourBuildClient({
               />
               <PerkListDisplay
                 title=""
-                perks={filteredPerksToDisplay}
+                perks={filteredPerks}
                 isLoading={isLoadingCurrentList}
                 error={errorCurrentList}
                 onPerkSelect={handlePerkSelect}
                 selectedPerkIds={selectedPerks.map((p) => p.id)}
-                maxPerksReached={selectedPerks.length >= maxPerks}
+                maxPerksReached={isLimitReached}
               />
             </div>
           </main>

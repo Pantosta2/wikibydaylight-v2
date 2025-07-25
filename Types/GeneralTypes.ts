@@ -1,3 +1,7 @@
+export type ApiResponse<T> = {
+  data: T;
+};
+
 export type Perk = {
   id: number;
   name: string;
@@ -30,7 +34,7 @@ export type PowerDetails = {
 };
 
 export type KillerApiData = BaseCharacter & {
-  role: 'killer';
+  role: "killer";
   fullName: string;
   gender: string;
   difficulty: string;
@@ -38,7 +42,7 @@ export type KillerApiData = BaseCharacter & {
   terrorRadius: number | string;
   powerName: string;
   description: string;
-  power: { 
+  power: {
     powerName: string;
     powerCode: string;
   };
@@ -53,4 +57,3 @@ export type CharacterProfileData = KillerApiData | SurvivorApiData;
 export type CharacterListEnvelope = {
   data: CharacterProfileData[];
 };
-

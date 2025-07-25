@@ -21,6 +21,7 @@ export default function MakeYourBuildClient({
   initialKillerPerks,
 }: MakeYourBuildClientProps) {
   const t = useTranslations("makeYourBuild");
+  const maxPerks = 4;
 
   const {
     selectedPerks,
@@ -33,8 +34,6 @@ export default function MakeYourBuildClient({
     filteredPerksToDisplay,
     isLoadingCurrentList,
     errorCurrentList,
-    selectedPerksCount,
-    maxPerks,
   } = usePerkBuildManager({
     initialSurvivorPerks: initialSurvivorPerks,
     initialKillerPerks: initialKillerPerks,
@@ -42,6 +41,7 @@ export default function MakeYourBuildClient({
     isLoadingKillers: false,
     errorSurvivors: null,
     errorKillers: null,
+    maxPerks: maxPerks,
   });
 
   return (
@@ -62,8 +62,8 @@ export default function MakeYourBuildClient({
             <header className="text-center mb-8 mt-6">
               <p className="text-md sm:text-lg text-gray-300 mt-3 max-w-2xl mx-auto">
                 {t("header.selectInstruction", {
-                  maxPerks: maxPerks,
-                  selectedCount: selectedPerksCount,
+                  maxPerks: 4,
+                  selectedCount: selectedPerks.length,
                 })}
               </p>
             </header>
@@ -89,7 +89,7 @@ export default function MakeYourBuildClient({
                 error={errorCurrentList}
                 onPerkSelect={handlePerkSelect}
                 selectedPerkIds={selectedPerks.map((p) => p.id)}
-                maxPerksReached={selectedPerksCount >= maxPerks}
+                maxPerksReached={selectedPerks.length >= maxPerks}
               />
             </div>
           </main>

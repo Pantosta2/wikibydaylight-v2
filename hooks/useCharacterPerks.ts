@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
-import type { Perk } from "../services/GeneralGetService"; 
+import type { Perk } from "../services/GeneralGetService";
 import { getCharacterPerks } from "../services/GeneralGetService";
 
 type UseCharacterPerksProps = {
   characterRole: "killer" | "survivor";
   characterCode?: string;
-  enabled: boolean; 
+  enabled: boolean;
 };
 
 export function useCharacterPerks({
@@ -24,14 +24,21 @@ export function useCharacterPerks({
       const fetchPerks = async () => {
         setIsLoading(true);
         setError(null);
-        setPerks([]); 
+        setPerks([]);
 
         try {
-          const response = await getCharacterPerks(characterRole, characterCode);
-          let perksData: Perk[] = [];
+          const response = await getCharacterPerks(
+            characterRole,
+            characterCode
+          );
+          let perksData = response.data.data || [];
+          setPerks(perksData);
           if (Array.isArray(response.data)) {
             perksData = response.data;
-          } else if (response.data && Array.isArray((response.data as any).data)) {
+          } else if (
+            response.data &&
+            Array.isArray((response.data as any).data)
+          ) {
             perksData = (response.data as any).data;
           } else {
             setError("Formato de perks inesperado.");
@@ -50,11 +57,11 @@ export function useCharacterPerks({
       setIsLoading(false);
       setError(null);
     }
-  }, [characterRole, characterCode, enabled]); 
+  }, [characterRole, characterCode, enabled]);
 
   return {
     perks,
-    isLoadingPerks: isLoading, 
-    errorPerks: error,       
+    isLoadingPerks: isLoading,
+    errorPerks: error,
   };
 }

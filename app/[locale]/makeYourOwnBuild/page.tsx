@@ -1,6 +1,7 @@
 import { fetchAllPerksForRole } from "@/services/GeneralGetService";
 import MakeYourBuildClient from "@/components/MakeYourBuildComponents/MakeYourBuildClient";
 import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default async function MakeYourOwnBuildPage() {
   const [survivorPerks, killerPerks] = await Promise.all([
@@ -9,16 +10,11 @@ export default async function MakeYourOwnBuildPage() {
   ]);
 
   return (
-    <div
-      className="sticky inset-0 bg-cover bg-center z-20"
-      style={{
-        backgroundImage: `url(${DefinedImagesForBackground.RedForest.src})`,
-      }}
-    >
+    <PageLayout backgroundImage={DefinedImagesForBackground.RedForest}>
       <MakeYourBuildClient
         initialSurvivorPerks={survivorPerks}
         initialKillerPerks={killerPerks}
       />
-    </div>
+    </PageLayout>
   );
 }

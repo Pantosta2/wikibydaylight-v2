@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useMemo } from 'react';
-import { useTranslations } from 'next-intl';
-import type { Perk } from '../Types/GeneralTypes'; 
+import { useState, useMemo } from "react";
+import { useTranslations } from "next-intl";
+import type { Perk } from "../Types/GeneralTypes";
 
 type RoleForSelection = "survivor" | "killer";
 
@@ -11,7 +11,7 @@ interface UsePerkBuildManagerProps {
   initialKillerPerks?: Perk[];
   isLoadingSurvivors: boolean;
   isLoadingKillers: boolean;
-  errorSurvivors?: Error | null; 
+  errorSurvivors?: Error | null;
   errorKillers?: Error | null;
   maxPerks?: number;
 }
@@ -25,23 +25,19 @@ export function usePerkBuildManager({
   errorKillers,
   maxPerks = 4,
 }: UsePerkBuildManagerProps) {
-  const t = useTranslations(); 
+  const t = useTranslations();
   const [selectedPerks, setSelectedPerks] = useState<Perk[]>([]);
   const [currentRoleToList, setCurrentRoleToList] =
     useState<RoleForSelection>("survivor");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isLimitReached, setIsLimitReached] = useState(false);
 
   const handlePerkSelect = (perkToAdd: Perk) => {
-    setSelectedPerks((prevSelectedPerks) => {
-      if (prevSelectedPerks.find((p) => p.id === perkToAdd.id)) {
-        return prevSelectedPerks;
-      }
-      if (prevSelectedPerks.length >= maxPerks) {
-        alert(t('alerts.perkLimitReached', {maxPerks}));
-        return prevSelectedPerks;
-      }
-      return [...prevSelectedPerks, perkToAdd];
-    });
+    if (selectedPerks.length >= maxPerks) {
+      setIsLimitReached(true);
+      return;
+    }
+    setIsLimitReached(false);
   };
 
   const handlePerkRemove = (perkIdToRemove: number) => {
@@ -56,15 +52,19 @@ export function usePerkBuildManager({
 
   const handleRoleChange = (role: RoleForSelection) => {
     setCurrentRoleToList(role);
-    setSearchQuery(""); 
+    setSearchQuery("");
   };
 
   const perksForCurrentRole = useMemo(() => {
-    return currentRoleToList === "survivor" ? initialSurvivorPerks : initialKillerPerks;
+    return currentRoleToList === "survivor"
+      ? initialSurvivorPerks
+      : initialKillerPerks;
   }, [currentRoleToList, initialSurvivorPerks, initialKillerPerks]);
 
   const isLoadingCurrentList = useMemo(() => {
-    return currentRoleToList === "survivor" ? isLoadingSurvivors : isLoadingKillers;
+    return currentRoleToList === "survivor"
+      ? isLoadingSurvivors
+      : isLoadingKillers;
   }, [currentRoleToList, isLoadingSurvivors, isLoadingKillers]);
 
   const errorCurrentList = useMemo(() => {
@@ -76,7 +76,8 @@ export function usePerkBuildManager({
     return perksForCurrentRole.filter((perk) => {
       const query = searchQuery.toLowerCase();
       const nameMatch = perk.name?.toLowerCase().includes(query) ?? false;
-      const descriptionMatch = perk.description?.toLowerCase().includes(query) ?? false;
+      const descriptionMatch =
+        perk.description?.toLowerCase().includes(query) ?? false;
       return nameMatch || descriptionMatch;
     });
   }, [perksForCurrentRole, searchQuery]);
@@ -92,7 +93,7 @@ export function usePerkBuildManager({
     filteredPerksToDisplay,
     isLoadingCurrentList,
     errorCurrentList,
-    selectedPerksCount: selectedPerks.length,
-    maxPerks,
+    isLimitReached,
+    clearLimitReached: () => setIsLimitReached(false),
   };
 }

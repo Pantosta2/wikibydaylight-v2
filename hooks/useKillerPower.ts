@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import { getKillerPowerDetails } from "../services/GeneralGetService";
-import type { PowerDetails } from "../services/GeneralGetService"; 
+import type { PowerDetails } from "../services/GeneralGetService";
 
 interface UseKillerPowerParams {
   characterRole: "killer" | "survivor";
@@ -32,12 +32,11 @@ export function useKillerPower({
         setErrorPower(null);
         try {
           const response = await getKillerPowerDetails(characterCode);
-          
-          const responseEnvelope = response.data as any;
 
-          if (responseEnvelope && Array.isArray(responseEnvelope.data) && responseEnvelope.data.length > 0) {
-            const actualPowerData = responseEnvelope.data[0];
-            setPower(actualPowerData);
+          const powerData = response.data.data[0];
+
+          if (powerData) {
+            setPower(powerData);
           } else {
             setErrorPower("Formato de poder inesperado.");
             setPower(null);
@@ -51,10 +50,10 @@ export function useKillerPower({
       fetchPower();
     } else {
       setPower(null);
-      setIsLoadingPower(false); 
+      setIsLoadingPower(false);
       setErrorPower(null);
     }
-  }, [characterRole, characterCode, enabled]); 
+  }, [characterRole, characterCode, enabled]);
 
   return { power, isLoadingPower, errorPower };
 }

@@ -1,46 +1,36 @@
-"use client";
-
-import { useCharacterPerks } from "@/features/characterDisplay/hooks/useCharacterPerks";
-import { useKillerPower } from "@/features/characterDisplay/hooks/useKillerPower";
+import KillerDetailsDisplay from "./KillerDetailsDisplay";
+import SurvivorDetailsDisplay from "./SurvivorDetailsDisplay";
+import PerkDisplayList from "./PerkDisplayList";
 import type {
   CharacterProfileData,
   KillerApiData,
   SurvivorApiData,
+  Perk,
+  PowerDetails,
 } from "@/common/types/GeneralTypes";
-import KillerDetailsDisplay from "./KillerDetailsDisplay";
-import SurvivorDetailsDisplay from "@/features/characterDisplay/components/SurvivorDetailsDisplay";
-import PerkDisplayList from "./PerkDisplayList";
 
 interface CharacterModalProps {
   character: CharacterProfileData;
-  characterRole: "killer" | "survivor";
+  perks: Perk[];
+  power: PowerDetails | null;
+  isLoadingPerks: boolean;
+  isLoadingPower: boolean;
+  errorPerks: string | null;
+  errorPower: string | null;
   onClose: () => void;
 }
 
 export default function CharacterModal({
   character,
-  characterRole,
+  perks,
+  power,
+  isLoadingPerks,
+  isLoadingPower,
+  errorPerks,
+  errorPower,
   onClose,
 }: CharacterModalProps) {
-  const {
-    perks: specificPerks,
-    isLoadingPerks,
-    errorPerks,
-  } = useCharacterPerks({
-    characterRole,
-    characterCode: character.code,
-    enabled: true,
-  });
-
-  const {
-    power: powerDetails,
-    isLoadingPower,
-    errorPower,
-  } = useKillerPower({
-    characterRole,
-    characterCode: character.code,
-    enabled: characterRole === "killer",
-  });
+  const { role } = character;
 
   return (
     <div
@@ -68,22 +58,22 @@ export default function CharacterModal({
           </h3>
           <p className="mb-3">{character.backstory}</p>
 
-          {characterRole === "killer" && (
+          {role === "killer" && (
             <KillerDetailsDisplay
               killer={character as KillerApiData}
-              power={powerDetails}
+              power={power}
               isLoadingPower={isLoadingPower}
               errorPower={errorPower}
             />
           )}
 
-          {characterRole === "survivor" && (
+          {role === "survivor" && (
             <SurvivorDetailsDisplay survivor={character as SurvivorApiData} />
           )}
 
           <div className="border-t border-gray-700 pt-3 mt-3">
             <PerkDisplayList
-              perks={specificPerks}
+              perks={perks}
               isLoading={isLoadingPerks}
               error={errorPerks}
             />

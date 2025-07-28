@@ -10,11 +10,6 @@ interface FilterState {
   searchQuery: string;
 }
 
-interface UsePerkFilteringProps {
-  survivorPerks: Perk[];
-  killerPerks: Perk[];
-}
-
 type FilterAction =
   | { type: "SET_ROLE"; payload: RoleForSelection }
   | { type: "SET_SEARCH_QUERY"; payload: string };
@@ -33,6 +28,11 @@ const filterReducer = (
   }
 };
 
+interface UsePerkFilteringProps {
+  survivorPerks: Perk[];
+  killerPerks: Perk[];
+}
+
 export function usePerkFiltering({
   survivorPerks,
   killerPerks,
@@ -42,21 +42,21 @@ export function usePerkFiltering({
     searchQuery: "",
   });
 
-  const avaliblePerks = useMemo(() => {
+  const availablePerks = useMemo(() => {
     return filters.role === "survivor" ? survivorPerks : killerPerks;
   }, [filters.role, survivorPerks, killerPerks]);
 
   const filteredPerks = useMemo(() => {
-    if (!avaliblePerks) return [];
+    if (!availablePerks) return [];
     const query = filters.searchQuery.toLowerCase();
-    if (!query) return avaliblePerks;
+    if (!query) return availablePerks;
 
-    return avaliblePerks.filter(
+    return availablePerks.filter(
       (perk) =>
         perk.name?.toLowerCase().includes(query) ||
         perk.description?.toLowerCase().includes(query)
     );
-  }, [avaliblePerks, filters.searchQuery]);
+  }, [availablePerks, filters.searchQuery]);
 
   return {
     filters,

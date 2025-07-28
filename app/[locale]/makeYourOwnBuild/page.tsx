@@ -1,4 +1,4 @@
-import { fetchAllPerksForRole } from "@/common/services/dbdApi.service";
+import { fetchAllPerksForRole } from "@/features/perkBuilder/services/perks.service";
 import MakeYourBuildClient from "@/features/perkBuilder/components/MakeYourBuildClient";
 import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
 import PageLayout from "@/common/components/layout/PageLayout";

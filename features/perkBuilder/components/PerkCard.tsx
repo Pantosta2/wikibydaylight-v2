@@ -1,4 +1,5 @@
-import type { Perk } from "../../../common/types/GeneralTypes";
+import React from "react";
+import type { Perk } from "@/common/types/GeneralTypes";
 
 interface PerkCardProps {
   perk: Perk;
@@ -65,4 +66,4 @@ const PerkCard: React.FC<PerkCardProps> = ({
   );
 };
 
-export default PerkCard;
+export default React.memo(PerkCard);

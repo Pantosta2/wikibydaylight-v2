@@ -17,6 +17,7 @@ export function Background() {
         layout="fill"
         objectFit="cover"
         className="opacity-60"
+        priority
       />
     </div>
   );

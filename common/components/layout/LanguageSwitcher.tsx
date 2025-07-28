@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from "next-intl";
 import { ChangeEvent, useTransition } from "react";
-import { usePathname, useRouter } from "@/common/i18n/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 
 export default function LanguageSwitcher() {
   const t = useTranslations("nav");

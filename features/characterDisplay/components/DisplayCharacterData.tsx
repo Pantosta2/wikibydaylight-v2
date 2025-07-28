@@ -1,7 +1,7 @@
 "use client";
 
 import PortraitCharacterList from "./PortraitCharacterList";
-import CharacterModal from "./CharacterModal";
+import CharacterModalContainer from "./CharacterModalContainer";
 import { useModal } from "@/common/hooks/useModal";
 import type { CharacterProfileData } from "@/common/types/GeneralTypes";
 
@@ -12,7 +12,6 @@ type DisplayCharacterDataProps = {
 
 export default function DisplayCharacterData({
   initialCharacters,
-  characterRole,
 }: DisplayCharacterDataProps) {
   const {
     isModalOpen,
@@ -29,9 +28,8 @@ export default function DisplayCharacterData({
       />
 
       {isModalOpen && selectedCharacter && (
-        <CharacterModal
+        <CharacterModalContainer
           character={selectedCharacter}
-          characterRole={characterRole}
           onClose={closeCharacterModal}
         />
       )}

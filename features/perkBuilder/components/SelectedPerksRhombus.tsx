@@ -9,7 +9,6 @@ const slotSizeDefinitions = {
   sm: { dimension: "9rem", iconClass: "w-74 h-74" },
   md: { dimension: "10rem", iconClass: "w-78 h-78" },
 };
-
 const getCurrentSizeConfig = () => {
   if (typeof window === "undefined") return slotSizeDefinitions.md;
   if (window.innerWidth >= 768) return slotSizeDefinitions.md;

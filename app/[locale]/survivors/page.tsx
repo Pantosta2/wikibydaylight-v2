@@ -1,7 +1,7 @@
-import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
-import { getSurvivors } from "@/services/GeneralGetService";
-import DisplayCharacterData from "@/components/CharactersStaticData/DisplayCharacterData";
-import PageLayout from "@/components/layout/PageLayout";
+import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
+import { getSurvivors } from "@/common/services/dbdApi.service";
+import DisplayCharacterData from "@/features/characterDisplay/components/DisplayCharacterData";
+import PageLayout from "@/common/components/layout/PageLayout";
 
 export default async function SurvivorsPage() {
   const killersResponse = await getSurvivors();

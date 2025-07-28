@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
-import { AnimatedRoleSection } from "@/components/AnimatedRoleSection";
-import PageLayout from "@/components/layout/PageLayout";
-import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
+import { AnimatedRoleSection } from "@/common/components/AnimatedRoleSection";
+import PageLayout from "@/common/components/layout/PageLayout";
+import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
 
 export default function MainPage() {
   const t = useTranslations();
@@ -31,6 +31,3 @@ export default function MainPage() {
     </div>
   );
 }
-
-
-

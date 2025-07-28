@@ -1,7 +1,7 @@
-import { fetchAllPerksForRole } from "@/services/GeneralGetService";
-import MakeYourBuildClient from "@/components/MakeYourBuildComponents/MakeYourBuildClient";
-import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
-import PageLayout from "@/components/layout/PageLayout";
+import { fetchAllPerksForRole } from "@/common/services/dbdApi.service";
+import MakeYourBuildClient from "@/features/perkBuilder/components/MakeYourBuildClient";
+import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
+import PageLayout from "@/common/components/layout/PageLayout";
 
 export default async function MakeYourOwnBuildPage() {
   const [survivorPerks, killerPerks] = await Promise.all([

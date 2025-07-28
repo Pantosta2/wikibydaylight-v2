@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/common/components/layout/Navbar";
 import { pick } from "@/utility";
 import "@/app/globals.css";
 

@@ -1,7 +1,7 @@
-import { DefinedImagesForBackground } from "@/assets/DefinedImagesForBackground";
-import DisplayCharacterData from "@/components/CharactersStaticData/DisplayCharacterData";
-import { getKillers } from "@/services/GeneralGetService";
-import PageLayout from "@/components/layout/PageLayout";
+import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
+import DisplayCharacterData from "@/features/characterDisplay/components/DisplayCharacterData";
+import { getKillers } from "@/common/services/dbdApi.service";
+import PageLayout from "@/common/components/layout/PageLayout";
 
 export default async function KillersPage() {
   const killersResponse = await getKillers();

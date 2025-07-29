@@ -6,7 +6,19 @@
     },
     "killers": {
       "text": "Killers",
-      "ariaLabel": "Button for information about killers"
+      "ariaLabel": "Button for information about killers",
+      "info_details": {
+        "title": "Killer Details",
+        "fullName": "Full name:",
+        "difficulty": "Difficulty:",
+        "moveSpeed": "Move speed:",
+        "terrorRadius": "Terror radius:",
+        "power": {
+          "title": "power"
+        },
+        "loadingMessage": "Loading Power...",
+        "emptyMessage": "No power details avalible."
+      }
     },
     "makeYourOwnBuild": {
       "text": "Create your own build",
@@ -58,5 +70,54 @@
     "alerts": {
       "perkLimitReached": "You have reached the perk limit."
     }
+  },
+  "killersPage": {
+      "info_details": {
+        "title": "Killer Details",
+        "fullName": "Full name: ",
+        "difficulty": "Difficulty: ",
+        "moveSpeed": "Move speed: ",
+        "terrorRadius": "Terror radius: ",
+        "power": {
+          "title": "Power",        
+          "loadingMessage": "Loading Power...",
+          "emptyMessage": "No power details avalible."
+        }
+      }
+  },
+  "components": {
+    "loading": "Loading...",
+    "errorTitle": "Something went wrong!",
+    "errorMessage": "Error: {error}",
+    "unexpectedError": "An unexpected error occurred.",
+    "noItemsFound": "No items found.",
+    "noCharactersFound": "No characters found.",
+    "selected": " (Selected)",
+    "limitReached": " (Limit reached)",
+    "icon": "Icon",
+    "removePerk": "Remove {perkName}",
+    "emptyPerkSlot": "Empty Perk Slot"
+  },
+  "characterModal": {
+    "overview": "Overview",
+    "backstory": "Backstory",
+    "perks": "Perks",
+    "killerDetails": "Killer Details",
+    "survivorDetails": "Survivor Details",
+    "fullName": "Full name:",
+    "difficulty": "Difficulty:",
+    "moveSpeed": "Move speed:",
+    "terrorRadius": "Terror radius:",
+    "power": "Power",
+    "nationality": "Nationality:",
+    "dlc": "DLC:",
+    "loadingPower": "Loading power...",
+    "loadingPerks": "Loading perks...",
+    "noPerks": "No perks listed for this character.",
+    "powerFormatError": "Unexpected power format.",
+    "powerLoadError": "Couldn't load killer power.",
+    "perksFormatError": "Unexpected perks format.",
+    "perksLoadError": "Couldn't load perks.",
+    "noPowerDetails": "No power details available."
   }
 }

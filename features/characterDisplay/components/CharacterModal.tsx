@@ -1,6 +1,7 @@
 import KillerDetailsDisplay from "./KillerDetailsDisplay";
 import SurvivorDetailsDisplay from "./SurvivorDetailsDisplay";
 import PerkDisplayList from "./PerkDisplayList";
+import { useTranslations } from "next-intl";
 import {
   CharacterProfileData,
   KillerApiData,
@@ -33,7 +34,7 @@ export default function CharacterModal({
   errorPower,
   onClose,
 }: CharacterModalProps) {
-  const { role } = character;
+  const t = useTranslations("characterModal");
 
   return (
     <div
@@ -54,10 +55,10 @@ export default function CharacterModal({
           {character.name}
         </h2>
         <div className="overflow-y-auto text-amber-50 pr-2">
-          <h3 className="text-2xl font-bold">Overview</h3>
+          <h3 className="text-2xl font-bold">{t("overview")}</h3>
           <p className="mb-3">{character.overview}</p>
           <h3 className="border-t border-gray-700 pt-3 mt-3 font-bold text-2xl">
-            Backstory
+            {t("backstory")}
           </h3>
           <p className="mb-3">{character.backstory}</p>
 

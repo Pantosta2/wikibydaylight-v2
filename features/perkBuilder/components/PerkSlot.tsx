@@ -1,4 +1,5 @@
 import type { Perk } from "../../../common/types/GeneralTypes";
+import { useTranslations } from "next-intl";
 
 interface PerkSlotProps {
   perk?: Perk;
@@ -13,6 +14,7 @@ const PerkSlot: React.FC<PerkSlotProps> = ({
   style,
   iconContainerClass,
 }) => {
+  const t = useTranslations("components");
   const handleRemoveClick = (e: React.MouseEvent) => {
     if (perk && onRemove) {
       e.stopPropagation();
@@ -20,7 +22,9 @@ const PerkSlot: React.FC<PerkSlotProps> = ({
     }
   };
 
-  const title = perk ? `Quitar ${perk.name}` : `Espacio para Perk`;
+  const title = perk
+    ? t("removePerk", { perkName: perk.name })
+    : t("emptyPerkSlot");
 
   return (
     <div

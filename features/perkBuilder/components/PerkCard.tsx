@@ -1,5 +1,6 @@
 import React from "react";
 import type { Perk } from "@/common/types/GeneralTypes";
+import { useTranslations } from "next-intl";
 
 interface PerkCardProps {
   perk: Perk;
@@ -14,6 +15,7 @@ const PerkCard: React.FC<PerkCardProps> = ({
   isSelected,
   isDisabled,
 }) => {
+  const t = useTranslations("components");
   const handleCardClick = () => {
     if (onSelect && !isSelected && !isDisabled) {
       onSelect(perk);
@@ -26,7 +28,7 @@ const PerkCard: React.FC<PerkCardProps> = ({
       disabled={isSelected || isDisabled}
       title={
         perk.name +
-        (isSelected ? " (Selected)" : isDisabled ? " (Limit reached)" : "")
+        (isSelected ? t("selected") : isDisabled ? t("LimitReached") : "")
       }
       className={`bg-gray-800 text-white border border-gray-700 rounded-lg shadow-xl p-4 m-2 flex flex-col items-center text-center w-full max-w-[260px] sm:w-64 transition-all duration-300 ease-in-out
         ${
@@ -52,7 +54,7 @@ const PerkCard: React.FC<PerkCardProps> = ({
         onError={(e) => {
           const target = e.currentTarget as HTMLImageElement;
           target.onerror = null;
-          target.src = "https://via.placeholder.com/80?text=Icono";
+          target.src = `...text=${t("icon")}`;
         }}
         loading="lazy"
       />

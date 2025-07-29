@@ -58,5 +58,54 @@
     "alerts": {
       "perkLimitReached": "Has alcanzado el límite de ventajas."
     }
+  },
+  "killersPage": {
+    "info_details": {
+      "title": "Detalles del Asesino",
+      "fullName": "Nombre completo: ",
+      "difficulty": "Dificultad: ",
+      "moveSpeed": "Velocidad de movimiento: ",
+      "terrorRadius": "Radio de terror: ",
+      "power": {
+        "title": "Poder",
+        "loadingMessage": "Cargando poder...",
+        "emptyMessage": "No hay detalles del poder disponibles."
+      }
+    }
+  },
+  "components": {
+    "loading": "Cargando...",
+    "errorTitle": "¡Algo salió mal!",
+    "errorMessage": "Error: {error}",
+    "unexpectedError": "Ocurrió un error inesperado.",
+    "noItemsFound": "No se encontraron elementos.",
+    "noCharactersFound": "No se encontraron personajes.",
+    "selected": " (Seleccionado)",
+    "limitReached": " (Límite alcanzado)",
+    "icon": "Icono",
+    "removePerk": "Quitar {perkName}",
+    "emptyPerkSlot": "Espacio para Ventaja"
+  },
+  "characterModal": {
+    "overview": "Resumen",
+    "backstory": "Historia",
+    "perks": "Ventajas:",
+    "killerDetails": "Detalles del Asesino",
+    "survivorDetails": "Detalles del Superviviente",
+    "fullName": "Nombre completo:",
+    "difficulty": "Dificultad:",
+    "moveSpeed": "Velocidad de movimiento:",
+    "terrorRadius": "Radio de terror:",
+    "power": "Poder",
+    "nationality": "Nacionalidad:",
+    "dlc": "DLC:",
+    "loadingPower": "Cargando poder...",
+    "loadingPerks": "Cargando ventajas...",
+    "noPerks": "No hay ventajas para este personaje.",
+    "powerFormatError": "Formato de poder inesperado.",
+    "powerLoadError": "No se pudo cargar el poder del asesino.",
+    "perksFormatError": "Formato de ventajas inesperado.",
+    "perksLoadError": "No se pudieron cargar las ventajas.",
+    "noPowerDetails": "No hay detalles del poder disponibles."
   }
 }

@@ -36,6 +36,9 @@ export default async function RootLayout({
             "mainPage",
             "notFoundPage",
             "makeYourBuild",
+            "components",
+            "characterModal",
+            "killersPage",
           ])}
         >
           <NavigationProvider>

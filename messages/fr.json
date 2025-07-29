@@ -58,5 +58,54 @@
     "alerts": {
       "perkLimitReached": "Vous avez atteint la limite de compétences."
     }
+  },
+  "killersPage": {
+    "info_details": {
+      "title": "Détails du Tueur",
+      "fullName": "Nom complet : ",
+      "difficulty": "Difficulté : ",
+      "moveSpeed": "Vitesse de déplacement : ",
+      "terrorRadius": "Rayon de terreur : ",
+      "power": {
+        "title": "Pouvoir",
+        "loadingMessage": "Chargement du pouvoir...",
+        "emptyMessage": "Aucun détail sur le pouvoir disponible."
+      }
+    }
+  },
+  "components": {
+    "loading": "Chargement...",
+    "errorTitle": "Quelque chose s'est mal passé !",
+    "errorMessage": "Erreur : {error}",
+    "unexpectedError": "Une erreur inattendue est survenue.",
+    "noItemsFound": "Aucun élément trouvé.",
+    "noCharactersFound": "Aucun personnage trouvé.",
+    "selected": " (Sélectionné)",
+    "limitReached": " (Limite atteinte)",
+    "icon": "Icône",
+    "removePerk": "Retirer {perkName}",
+    "emptyPerkSlot": "Emplacement de compétence vide"
+  },
+  "characterModal": {
+    "overview": "Aperçu",
+    "backstory": "Histoire",
+    "perks": "Compétences :",
+    "killerDetails": "Détails du Tueur",
+    "survivorDetails": "Détails du Survivant",
+    "fullName": "Nom complet :",
+    "difficulty": "Difficulté :",
+    "moveSpeed": "Vitesse de déplacement :",
+    "terrorRadius": "Rayon de terreur :",
+    "power": "Pouvoir",
+    "nationality": "Nationalité :",
+    "dlc": "DLC :",
+    "loadingPower": "Chargement du pouvoir...",
+    "loadingPerks": "Chargement des compétences...",
+    "noPerks": "Aucune compétence listée pour ce personnage.",
+    "powerFormatError": "Format de pouvoir inattendu.",
+    "powerLoadError": "Impossible de charger le pouvoir du tueur.",
+    "perksFormatError": "Format de compétences inattendu.",
+    "perksLoadError": "Impossible de charger les compétences.",
+    "noPowerDetails": "Aucun détail sur le pouvoir disponible."
   }
 }

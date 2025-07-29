@@ -2,6 +2,7 @@ import type {
   KillerApiData,
   PowerDetails,
 } from "../../../common/types/GeneralTypes";
+import { useTranslations } from "next-intl";
 import { AsyncContent } from "@/common/components/AsyncContent";
 
 interface KillerDetailsProps {
@@ -16,35 +17,34 @@ export default function KillerDetailsDisplay({
   isLoadingPower,
   errorPower,
 }: KillerDetailsProps) {
+  const t = useTranslations("killersPage.info_details");
   return (
     <div className="border-t border-gray-700 pt-3 mt-3">
-      <h3 className="text-2xl font-bold mb-2">Killer Details</h3>
+      <h3 className="text-2xl font-bold mb-2">{t("title")}</h3>
       <p>
-        <span className="font-bold">Full name: </span>
+        <span className="font-bold">{t("fullName")}</span>
         {killer.fullName}
       </p>
       <p>
-        <span className="font-bold">Difficulty: </span>
+        <span className="font-bold">{t("difficulty")}</span>
         {killer.difficulty}
       </p>
       <p>
-        <span className="font-bold">Move speed: </span>
+        <span className="font-bold">{t("moveSpeed")}</span>
         {killer.moveSpeed}
       </p>
       <p>
-        <span className="font-bold">Terror radius: </span>
+        <span className="font-bold">{t("terrorRadius")}</span>
         {killer.terrorRadius}
       </p>
       <div className="mt-2 pt-2 border-t border-gray-600">
-        <h4 className="font-bold text-xl">Power</h4>
+        <h4 className="font-bold text-xl">{t("power.title")}</h4>
         <AsyncContent
           isLoading={isLoadingPower}
           error={errorPower}
           data={power ? [power] : []}
-          loadingMessage="Loading power..."
-          emptyMessage={
-            killer.power?.powerName || "No power details available."
-          }
+          loadingMessage={t("power.loadingMessage")}
+          emptyMessage={killer.power?.powerName || t("power.emptyMessage")}
         >
           {(powerDetails) => (
             <>

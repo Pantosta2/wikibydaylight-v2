@@ -1,56 +1,22 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import NavButtonLink from "@/common/components/layout/NavButtonLink";
-import Image from "next/image";
-import Link from "next/link";
-import DbdLogo from "@/public/DbdLogo.png";
-import LanguageSwitcher from "@/common/components/layout/LanguageSwitcher";
+import { useState } from "react";
+import NavbarUI from "./NavbarUI";
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="absolute w-screen general-scrollbar font-bold z-40">
-      <ul className="flex flex-row items-center justify-center p-2 w-full">
-        <li className="flex flex-4">
-          <Link href="/">
-            <Image
-              src={DbdLogo}
-              alt={t("common.dbdlogo_alt")}
-              className="w-45 h-15"
-              priority
-            />
-          </Link>
-        </li>
-        <li
-          className="flex items-center justify-center px-[2rem]"
-          aria-label={t("survivors.ariaLabel")}
-        >
-          <NavButtonLink
-            PathUrl="/survivors"
-            ButtonName={t("survivors.text")}
-          />
-        </li>
-        <li
-          className="flex items-center justify-center px-[2rem]"
-          aria-label={t("killers.ariaLabel")}
-        >
-          <NavButtonLink PathUrl="/killers" ButtonName={t("killers.text")} />
-        </li>
-        <li
-          className="flex items-center justify-center px-[2rem]"
-          aria-label={t("makeYourOwnBuild.ariaLabel")}
-        >
-          <NavButtonLink
-            PathUrl="/makeYourOwnBuild"
-            ButtonName={t("makeYourOwnBuild.text")}
-          />
-        </li>
-        <li>
-          <LanguageSwitcher />
-        </li>
-      </ul>
-    </nav>
+    <NavbarUI
+      isOpen={isOpen}
+      toggleMenu={toggleMenu}
+      closeMenu={closeMenu}
+      t={t}
+    />
   );
 }

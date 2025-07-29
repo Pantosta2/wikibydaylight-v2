@@ -9,14 +9,13 @@ interface AsyncContentProps<T> {
   emptyMessage?: string;
   children: (data: T[]) => React.ReactNode;
 }
-
 export function AsyncContent<T>({
   isLoading,
   error,
   data,
-  loadingMessage = "Loading...",
-  errorMessage = "Something went wrong!",
-  emptyMessage = "No items found.",
+  loadingMessage,
+  errorMessage,
+  emptyMessage,
   children,
 }: AsyncContentProps<T>) {
   if (isLoading) {

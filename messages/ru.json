@@ -58,5 +58,54 @@
     "alerts": {
       "perkLimitReached": "Вы достигли лимита навыков."
     }
+  },
+  "killersPage": {
+    "info_details": {
+      "title": "Детали Убийцы",
+      "fullName": "Полное имя: ",
+      "difficulty": "Сложность: ",
+      "moveSpeed": "Скорость передвижения: ",
+      "terrorRadius": "Радиус террора: ",
+      "power": {
+        "title": "Сила",
+        "loadingMessage": "Загрузка силы...",
+        "emptyMessage": "Нет сведений о силе."
+      }
+    }
+  },
+  "components": {
+    "loading": "Загрузка...",
+    "errorTitle": "Что-то пошло не так!",
+    "errorMessage": "Ошибка: {error}",
+    "unexpectedError": "Произошла непредвиденная ошибка.",
+    "noItemsFound": "Элементы не найдены.",
+    "noCharactersFound": "Персонажи не найдены.",
+    "selected": " (Выбрано)",
+    "limitReached": " (Лимит достигнут)",
+    "icon": "Иконка",
+    "removePerk": "Удалить {perkName}",
+    "emptyPerkSlot": "Пустой слот для навыка"
+  },
+  "characterModal": {
+    "overview": "Обзор",
+    "backstory": "Предыстория",
+    "perks": "Навыки:",
+    "killerDetails": "Детали Убийцы",
+    "survivorDetails": "Детали Выжившего",
+    "fullName": "Полное имя:",
+    "difficulty": "Сложность:",
+    "moveSpeed": "Скорость передвижения:",
+    "terrorRadius": "Радиус террора:",
+    "power": "Сила",
+    "nationality": "Национальность:",
+    "dlc": "DLC:",
+    "loadingPower": "Загрузка силы...",
+    "loadingPerks": "Загрузка навыков...",
+    "noPerks": "Для этого персонажа нет навыков.",
+    "powerFormatError": "Неожиданный формат силы.",
+    "powerLoadError": "Не удалось загрузить силу убийцы.",
+    "perksFormatError": "Неожиданный формат навыков.",
+    "perksLoadError": "Не удалось загрузить навыки.",
+    "noPowerDetails": "Нет сведений о силе."
   }
 }

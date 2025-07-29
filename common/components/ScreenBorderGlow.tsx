@@ -17,10 +17,10 @@ export function ScreenBorderGlow({ activeSide }: ScreenBorderGlowProps) {
   return (
     <>
       <div
-        className={`fixed left-0 top-0 bottom-0 z-30 w-4 bg-transparent ${glowClass} shadow-[5px_0_25px_0px] transition-all duration-1000 ease-in-out pointer-events-none`}
+        className={`fixed left-full top-0 bottom-0 z-30 w-10 bg-transparent ${glowClass} shadow-[10px_0_50px_0px] transition-all duration-1000 ease-in-out pointer-events-none`}
       />
       <div
-        className={`fixed right-0 top-0 bottom-0 z-30 w-4 bg-transparent ${glowClass} shadow-[-5px_0_25px_0px] transition-all duration-1000 ease-in-out pointer-events-none`}
+        className={`fixed right-full top-0 bottom-0 z-30 w-10 bg-transparent ${glowClass} shadow-[-10px_0_50px_0px] transition-all duration-1000 ease-in-out pointer-events-none`}
       />
     </>
   );

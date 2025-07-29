@@ -4,6 +4,7 @@ import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
 import Navbar from "@/common/components/layout/Navbar";
 import { pick } from "@/utility";
+import { NavigationProvider } from "@/common/context/NavigationContext";
 import "@/app/globals.css";
 
 const locales = ["en", "es", "fr", "ru"];
@@ -37,7 +38,9 @@ export default async function RootLayout({
             "makeYourBuild",
           ])}
         >
-          <Navbar />
+          <NavigationProvider>
+            <Navbar />
+          </NavigationProvider>
           {children}
         </NextIntlClientProvider>
       </body>

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import type { Perk } from "../../../common/types/GeneralTypes";
+import type { Perk, ROLES } from "../../../common/types/GeneralTypes";
 import { fetchAllPerksForRole } from "@/features/perkBuilder/services/perks.service";
 
 export function useCombinedRolePerks({
   role,
   enabled,
 }: {
-  role: "killer" | "survivor";
+  role: typeof ROLES.KILLER | typeof ROLES.SURVIVOR;
   enabled: boolean;
 }) {
   const [perks, setPerks] = useState<Perk[]>([]);

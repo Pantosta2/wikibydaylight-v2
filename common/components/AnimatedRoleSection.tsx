@@ -5,15 +5,16 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
 import { ScreenBorderGlow, ActiveSide } from "./ScreenBorderGlow";
+import { ROLES } from "../types/GeneralTypes";
 
 export function AnimatedRoleSection() {
-  const [activeSide, setActiveSide] = useState<ActiveSide>("killer");
+  const [activeSide, setActiveSide] = useState<ActiveSide>(ROLES.KILLER);
   const t = useTranslations("mainPage");
 
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSide((prevSide) =>
-        prevSide === "killer" ? "survivor" : "killer"
+        prevSide === ROLES.KILLER ? ROLES.SURVIVOR : ROLES.KILLER
       );
     }, 10000);
     return () => clearInterval(timer);
@@ -56,7 +57,7 @@ export function AnimatedRoleSection() {
         </div>
         <div
           className={`${cardBaseStyles} ${
-            activeSide === "killer" ? activeStyles : inactiveStyles
+            activeSide === ROLES.KILLER ? activeStyles : inactiveStyles
           }`}
         >
           <Image

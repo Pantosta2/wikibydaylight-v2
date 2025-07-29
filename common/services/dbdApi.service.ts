@@ -6,6 +6,7 @@ import type {
   PowerDetails,
   CharacterProfileData,
   ApiResponse,
+  ROLES,
 } from "../types/GeneralTypes";
 
 const getKillers = async (): Promise<
@@ -21,7 +22,7 @@ const getSurvivors = async (): Promise<
 };
 
 const getCharacterPerks = (
-  role: "killer" | "survivor",
+  role: typeof ROLES.KILLER | typeof ROLES.SURVIVOR,
   characterCode: string
 ): Promise<AxiosResponse<ApiResponse<Perk[]>>> => {
   return apiClient.get<ApiResponse<Perk[]>>(`/${role}/${characterCode}/perk`);

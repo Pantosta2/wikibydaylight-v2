@@ -1,5 +1,7 @@
 "use client";
 
+import { ROLES } from "../types/GeneralTypes";
+
 export type ActiveSide = "survivor" | "killer";
 
 interface ScreenBorderGlowProps {
@@ -10,7 +12,7 @@ export function ScreenBorderGlow({ activeSide }: ScreenBorderGlowProps) {
   const killerGlow = "shadow-red-500/80";
   const survivorGlow = "shadow-cyan-400/80";
 
-  const glowClass = activeSide === "killer" ? killerGlow : survivorGlow;
+  const glowClass = activeSide === ROLES.KILLER ? killerGlow : survivorGlow;
 
   return (
     <>

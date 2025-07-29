@@ -1,7 +1,7 @@
 "use client";
 
 import { useReducer, useMemo } from "react";
-import type { Perk } from "@/common/types/GeneralTypes";
+import { Perk, ROLES } from "@/common/types/GeneralTypes";
 
 type RoleForSelection = "survivor" | "killer";
 
@@ -38,12 +38,12 @@ export function usePerkFiltering({
   killerPerks,
 }: UsePerkFilteringProps) {
   const [filters, dispatch] = useReducer(filterReducer, {
-    role: "survivor",
+    role: ROLES.SURVIVOR,
     searchQuery: "",
   });
 
   const availablePerks = useMemo(() => {
-    return filters.role === "survivor" ? survivorPerks : killerPerks;
+    return filters.role === ROLES.SURVIVOR ? survivorPerks : killerPerks;
   }, [filters.role, survivorPerks, killerPerks]);
 
   const filteredPerks = useMemo(() => {

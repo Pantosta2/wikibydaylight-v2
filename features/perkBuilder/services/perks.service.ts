@@ -3,13 +3,12 @@ import {
   getSurvivors,
   getCharacterPerks,
 } from "@/common/services/dbdApi.service";
-import type { Perk } from "@/common/types/GeneralTypes";
+import { Perk, ROLES, type Role } from "@/common/types/GeneralTypes";
 
-export async function fetchAllPerksForRole(
-  role: "killer" | "survivor"
-): Promise<Perk[]> {
+export async function fetchAllPerksForRole(role: Role): Promise<Perk[]> {
   try {
-    const charactersPromise = role === "killer" ? getKillers() : getSurvivors();
+    const charactersPromise =
+      role === ROLES.KILLER ? getKillers() : getSurvivors();
     const generalPerksPromise = getCharacterPerks(role, "all");
 
     const [characterResponse, generalPerksResponse] = await Promise.all([

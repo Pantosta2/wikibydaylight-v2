@@ -2,6 +2,7 @@ import type {
   KillerApiData,
   PowerDetails,
 } from "../../../common/types/GeneralTypes";
+import { AsyncContent } from "@/common/components/AsyncContent";
 
 interface KillerDetailsProps {
   killer: KillerApiData;
@@ -9,7 +10,6 @@ interface KillerDetailsProps {
   isLoadingPower: boolean;
   errorPower: string | null;
 }
-
 export default function KillerDetailsDisplay({
   killer,
   power,
@@ -37,19 +37,24 @@ export default function KillerDetailsDisplay({
       </p>
       <div className="mt-2 pt-2 border-t border-gray-600">
         <h4 className="font-bold text-xl">Power</h4>
-        {isLoadingPower && (
-          <p className="text-amber-100/70">Loading power...</p>
-        )}
-        {errorPower && <p className="text-red-500">{errorPower}</p>}
-        {power && !isLoadingPower && (
-          <>
-            <p className="font-semibold text-lg">{power.powerName}</p>
-            <p className="text-sm mt-1">{power.description}</p>
-          </>
-        )}
-        {!power && !isLoadingPower && killer.power?.powerName && (
-          <p className="font-semibold text-lg">{killer.power.powerName}</p>
-        )}
+        <AsyncContent
+          isLoading={isLoadingPower}
+          error={errorPower}
+          data={power ? [power] : []}
+          loadingMessage="Loading power..."
+          emptyMessage={
+            killer.power?.powerName || "No power details available."
+          }
+        >
+          {(powerDetails) => (
+            <>
+              <p className="font-semibold text-lg">
+                {powerDetails[0].powerName}
+              </p>
+              <p className="text-sm mt-1">{powerDetails[0].description}</p>
+            </>
+          )}
+        </AsyncContent>
       </div>
     </div>
   );

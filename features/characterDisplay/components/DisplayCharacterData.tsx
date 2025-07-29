@@ -3,15 +3,16 @@
 import PortraitCharacterList from "./PortraitCharacterList";
 import CharacterModalContainer from "./CharacterModalContainer";
 import { useModal } from "@/common/hooks/useModal";
-import type { CharacterProfileData } from "@/common/types/GeneralTypes";
+import type { ROLES, CharacterProfileData } from "@/common/types/GeneralTypes";
 
 type DisplayCharacterDataProps = {
   initialCharacters: CharacterProfileData[];
-  characterRole: "killer" | "survivor";
+  characterRole: typeof ROLES.KILLER | typeof ROLES.SURVIVOR;
 };
 
 export default function DisplayCharacterData({
   initialCharacters,
+  characterRole,
 }: DisplayCharacterDataProps) {
   const {
     isModalOpen,
@@ -20,16 +21,22 @@ export default function DisplayCharacterData({
     closeModal: closeCharacterModal,
   } = useModal<CharacterProfileData>();
 
+  const isLoading = false;
+  const error = null;
+
   return (
     <>
       <PortraitCharacterList
         onButtonClick={openCharacterModal}
         characters={initialCharacters}
+        isLoading={isLoading}
+        error={error}
       />
 
       {isModalOpen && selectedCharacter && (
         <CharacterModalContainer
           character={selectedCharacter}
+          characterRole={characterRole}
           onClose={closeCharacterModal}
         />
       )}

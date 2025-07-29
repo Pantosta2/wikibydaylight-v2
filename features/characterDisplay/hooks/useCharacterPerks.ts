@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import type { Perk } from "@/common/types/GeneralTypes";
 import { getCharacterPerks } from "../../../common/services/dbdApi.service";
+import { ROLES } from "@/common/types/GeneralTypes";
 
 type UseCharacterPerksProps = {
-  characterRole: "killer" | "survivor";
+  characterRole: typeof ROLES.KILLER | typeof ROLES.SURVIVOR;
   characterCode?: string;
   enabled: boolean;
 };

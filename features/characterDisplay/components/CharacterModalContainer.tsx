@@ -2,25 +2,27 @@
 
 import { useCharacterPerks } from "@/features/characterDisplay/hooks/useCharacterPerks";
 import { useKillerPower } from "@/features/characterDisplay/hooks/useKillerPower";
-import type { CharacterProfileData } from "@/common/types/GeneralTypes";
+import type { CharacterProfileData, ROLES } from "@/common/types/GeneralTypes";
 import CharacterModal from "./CharacterModal";
 
 interface CharacterModalContainerProps {
   character: CharacterProfileData;
+  characterRole: typeof ROLES.KILLER | typeof ROLES.SURVIVOR;
   onClose: () => void;
 }
 export default function CharacterModalContainer({
   character,
+  characterRole,
   onClose,
 }: CharacterModalContainerProps) {
-  const { role, code } = character;
+  const { code } = character;
 
   const {
     perks: specificPerks,
     isLoadingPerks,
     errorPerks,
   } = useCharacterPerks({
-    characterRole: role,
+    characterRole: characterRole,
     characterCode: code,
     enabled: true,
   });
@@ -30,14 +32,15 @@ export default function CharacterModalContainer({
     isLoadingPower,
     errorPower,
   } = useKillerPower({
-    characterRole: role,
+    characterRole: characterRole,
     characterCode: code,
-    enabled: role === "killer",
+    enabled: characterRole === "killer",
   });
 
   return (
     <CharacterModal
       character={character}
+      characterRole={characterRole}
       perks={specificPerks}
       power={powerDetails}
       isLoadingPerks={isLoadingPerks}

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { getKillerPowerDetails } from "../../../common/services/dbdApi.service";
-import type { PowerDetails } from "@/common/types/GeneralTypes";
+import { PowerDetails, ROLES } from "@/common/types/GeneralTypes";
 
 interface UseKillerPowerParams {
   characterRole: "killer" | "survivor";
@@ -26,7 +26,7 @@ export function useKillerPower({
   const [errorPower, setErrorPower] = useState<string | null>(null);
 
   useEffect(() => {
-    if (enabled && characterRole === "killer" && characterCode) {
+    if (enabled && characterRole === ROLES.KILLER && characterCode) {
       const fetchPower = async () => {
         setIsLoadingPower(true);
         setErrorPower(null);

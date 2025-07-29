@@ -34,7 +34,7 @@ export type PowerDetails = {
 };
 
 export type KillerApiData = BaseCharacter & {
-  role: "killer";
+  role: typeof ROLES.KILLER;
   fullName: string;
   gender: string;
   difficulty: string;
@@ -49,7 +49,7 @@ export type KillerApiData = BaseCharacter & {
 };
 
 export type SurvivorApiData = BaseCharacter & {
-  role: "survivor";
+  role: typeof ROLES.SURVIVOR;
 };
 
 export type CharacterProfileData = KillerApiData | SurvivorApiData;
@@ -57,3 +57,10 @@ export type CharacterProfileData = KillerApiData | SurvivorApiData;
 export type CharacterListEnvelope = {
   data: CharacterProfileData[];
 };
+
+export const ROLES = {
+  KILLER: "killer",
+  SURVIVOR: "survivor",
+} as const;
+
+export type Role = (typeof ROLES)[keyof typeof ROLES];

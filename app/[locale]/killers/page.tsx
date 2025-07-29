@@ -2,6 +2,7 @@ import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBack
 import DisplayCharacterData from "@/features/characterDisplay/components/DisplayCharacterData";
 import { getKillers } from "@/common/services/dbdApi.service";
 import PageLayout from "@/common/components/layout/PageLayout";
+import { ROLES } from "@/common/types/GeneralTypes";
 
 export default async function KillersPage() {
   const killersResponse = await getKillers();
@@ -12,7 +13,7 @@ export default async function KillersPage() {
       <PageLayout backgroundImage={DefinedImagesForBackground.GardenOfJoy}>
         <DisplayCharacterData
           initialCharacters={initialKillers}
-          characterRole="killer"
+          characterRole={ROLES.KILLER}
         />
       </PageLayout>
     </div>

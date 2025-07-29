@@ -1,16 +1,18 @@
 import KillerDetailsDisplay from "./KillerDetailsDisplay";
 import SurvivorDetailsDisplay from "./SurvivorDetailsDisplay";
 import PerkDisplayList from "./PerkDisplayList";
-import type {
+import {
   CharacterProfileData,
   KillerApiData,
   SurvivorApiData,
   Perk,
   PowerDetails,
+  ROLES,
 } from "@/common/types/GeneralTypes";
 
 interface CharacterModalProps {
   character: CharacterProfileData;
+  characterRole: typeof ROLES.KILLER | typeof ROLES.SURVIVOR;
   perks: Perk[];
   power: PowerDetails | null;
   isLoadingPerks: boolean;
@@ -22,6 +24,7 @@ interface CharacterModalProps {
 
 export default function CharacterModal({
   character,
+  characterRole,
   perks,
   power,
   isLoadingPerks,
@@ -58,7 +61,7 @@ export default function CharacterModal({
           </h3>
           <p className="mb-3">{character.backstory}</p>
 
-          {role === "killer" && (
+          {characterRole === ROLES.KILLER && (
             <KillerDetailsDisplay
               killer={character as KillerApiData}
               power={power}
@@ -67,7 +70,7 @@ export default function CharacterModal({
             />
           )}
 
-          {role === "survivor" && (
+          {characterRole === ROLES.SURVIVOR && (
             <SurvivorDetailsDisplay survivor={character as SurvivorApiData} />
           )}
 

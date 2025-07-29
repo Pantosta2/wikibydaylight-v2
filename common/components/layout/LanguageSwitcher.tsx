@@ -1,13 +1,14 @@
 import { useLocale, useTranslations } from "next-intl";
-import { ChangeEvent, useTransition } from "react";
+import { ChangeEvent } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { useNavigation } from "@/common/context/NavigationContext";
 
 export default function LanguageSwitcher() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
+  const { isPending, startTransition } = useNavigation();
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = e.target.value;

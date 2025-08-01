@@ -15,7 +15,7 @@ export default function PageLayout({
     typeof backgroundImage === "string" ? backgroundImage : backgroundImage.src;
 
   return (
-    <div className="absolute h-screen w-full overflow-x-hidden">
+    <div className="relative h-screen w-full overflow-x-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center z-10"
         style={{ backgroundImage: `url(${bgImageSrc})` }}
@@ -23,12 +23,12 @@ export default function PageLayout({
         <Image
           src={DefinedImagesForBackground.Fog}
           alt="Atmospheric fog overlay"
-          className="absolute -bottom-40 w-full scale-160 z-10"
+          className="absolute -bottom-40 scale-160 z-10"
         />
         <Image
           src={DefinedImagesForBackground.Fog}
           alt="Atmospheric fog overlay"
-          className="absolute -bottom-40 w-full scale-160 z-10"
+          className="absolute -bottom-40 scale-160 z-10"
         />
         {children}
       </div>

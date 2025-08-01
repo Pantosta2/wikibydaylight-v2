@@ -93,7 +93,7 @@
     "noItemsFound": "No items found.",
     "noCharactersFound": "No characters found.",
     "selected": " (Selected)",
-    "limitReached": " (Limit reached)",
+    "limitReached": "(Limit reached)",
     "icon": "Icon",
     "removePerk": "Remove {perkName}",
     "emptyPerkSlot": "Empty Perk Slot"

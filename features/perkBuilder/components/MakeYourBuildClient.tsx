@@ -4,13 +4,11 @@ import { usePerkFiltering } from "@/features/perkBuilder/hooks/usePerkFiltering"
 import { usePerkSelection } from "@/features/perkBuilder/hooks/usePerkSelection";
 import { useTranslations } from "next-intl";
 import type { Perk } from "@/common/types/GeneralTypes";
-import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
 
 import RoleSelection from "./RoleSelection";
 import PerkSearchInput from "./PerkSearchInput";
 import PerkListDisplay from "./PerkListDisplay";
 import SelectedPerksRhombus from "./SelectedPerksRhombus";
-import Image from "next/image";
 
 interface MakeYourBuildClientProps {
   initialSurvivorPerks: Perk[];

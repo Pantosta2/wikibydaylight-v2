@@ -22,7 +22,7 @@ describe("usePerkSelection", () => {
     const { result } = renderHook(() => usePerkSelection({ maxPerks: 4 }));
 
     act(() => {
-      result.current.handlePerkSelect(perkDePrueba);
+      result.current.handleTogglePerk(perkDePrueba);
     });
 
     expect(result.current.selectedPerks).toHaveLength(1);

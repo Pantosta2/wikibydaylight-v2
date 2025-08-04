@@ -9,31 +9,39 @@ import type {
   ROLES,
 } from "../types/GeneralTypes";
 
-const getKillers = async (): Promise<
+export const getKillers = async (): Promise<
   AxiosResponse<ApiResponse<CharacterProfileData[]>>
 > => {
-  return await apiClient.get<ApiResponse<CharacterProfileData[]>>(`/killer`);
+  const response = await apiClient.get<ApiResponse<CharacterProfileData[]>>(
+    `/killer`
+  );
+  if (!response.data || !response.data.data) {
+    throw new Error("Respuesta inválida de la API para Killers.");
+  }
+  return response;
 };
 
-const getSurvivors = async (): Promise<
+export const getSurvivors = async (): Promise<
   AxiosResponse<CharacterListEnvelope>
 > => {
-  return await apiClient.get<CharacterListEnvelope>("/survivor");
+  const response = await apiClient.get<CharacterListEnvelope>("/survivor");
+  if (!response.data || !response.data.data) {
+    throw new Error("Respuesta inválida de la API para Survivors.");
+  }
+  return response;
 };
 
-const getCharacterPerks = (
+export const getCharacterPerks = (
   role: typeof ROLES.KILLER | typeof ROLES.SURVIVOR,
   characterCode: string
 ): Promise<AxiosResponse<ApiResponse<Perk[]>>> => {
   return apiClient.get<ApiResponse<Perk[]>>(`/${role}/${characterCode}/perk`);
 };
 
-const getKillerPowerDetails = (
+export const getKillerPowerDetails = async (
   characterCode: string
 ): Promise<AxiosResponse<ApiResponse<PowerDetails[]>>> => {
   return apiClient.get<ApiResponse<PowerDetails[]>>(
     `/killer/${characterCode}/power`
   );
 };
-
-export { getKillers, getSurvivors, getCharacterPerks, getKillerPowerDetails };

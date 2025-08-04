@@ -1,6 +1,6 @@
 import NavButtonLink from "@/common/components/layout/NavButtonLink";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import DbdLogo from "@/public/DbdLogo.png";
 import LanguageSwitcher from "@/common/components/layout/LanguageSwitcher";
 interface NavbarUIProps {

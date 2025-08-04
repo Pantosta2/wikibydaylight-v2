@@ -22,7 +22,7 @@ export default function MakeYourBuildClient({
   const t = useTranslations("makeYourBuild");
   const maxPerks = 4;
 
-  const { selectedPerks, handlePerkSelect, handlePerkRemove, isLimitReached } =
+  const { selectedPerks, handleTogglePerk, handlePerkRemove, isLimitReached } =
     usePerkSelection({ maxPerks });
 
   const { filters, dispatch, filteredPerks } = usePerkFiltering({
@@ -73,7 +73,7 @@ export default function MakeYourBuildClient({
                 perks={filteredPerks}
                 isLoading={isLoadingCurrentList}
                 error={errorCurrentList}
-                onPerkSelect={handlePerkSelect}
+                onPerkSelect={handleTogglePerk}
                 selectedPerkIds={selectedPerks.map((p) => p.id)}
                 maxPerksReached={isLimitReached}
               />

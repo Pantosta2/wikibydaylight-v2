@@ -17,7 +17,7 @@ const PerkCard: React.FC<PerkCardProps> = ({
 }) => {
   const t = useTranslations("components");
   const handleCardClick = () => {
-    if (onSelect && !isSelected && !isDisabled) {
+    if (onSelect && !isDisabled) {
       onSelect(perk);
     }
   };
@@ -25,7 +25,7 @@ const PerkCard: React.FC<PerkCardProps> = ({
   return (
     <button
       onClick={handleCardClick}
-      disabled={isSelected || isDisabled}
+      disabled={isDisabled}
       title={
         perk.name +
         (isSelected ? t("selected") : isDisabled ? t("limitReached") : "")
@@ -38,13 +38,7 @@ const PerkCard: React.FC<PerkCardProps> = ({
             ? "hover:scale-105 hover:border-yellow-400"
             : ""
         }
-        ${
-          isDisabled && !isSelected
-            ? "opacity-50 cursor-not-allowed"
-            : onSelect
-            ? "cursor-pointer"
-            : "cursor-default"
-        }
+        ${isDisabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
       `}
     >
       <img

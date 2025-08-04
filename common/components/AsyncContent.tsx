@@ -18,12 +18,6 @@ export function AsyncContent<T>({
   emptyMessage,
   children,
 }: AsyncContentProps<T>) {
-  console.log("ESTADO DE ASYNCCONTENT:", {
-    isLoading,
-    hasError: !!error,
-    dataLength: data?.length ?? "null",
-  });
-
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center text-center py-12">

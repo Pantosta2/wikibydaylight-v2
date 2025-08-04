@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
 import { useNavigation } from "@/common/context/NavigationContext";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 type ButtonType = {
   ButtonName: string;

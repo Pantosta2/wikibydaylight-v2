@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import type { Perk } from "@/common/types/GeneralTypes";
 
 interface UsePerkSelectionProps {
@@ -9,20 +9,33 @@ export function usePerkSelection({ maxPerks = 4 }: UsePerkSelectionProps) {
   const [selectedPerks, setSelectedPerks] = useState<Perk[]>([]);
   const isLimitReached = selectedPerks.length >= maxPerks;
 
-  const handlePerkSelect = (perkToAdd: Perk) => {
-    if (isLimitReached || selectedPerks.find((p) => p.id === perkToAdd.id)) {
-      return;
-    }
-    setSelectedPerks((prev) => [...prev, perkToAdd]);
-  };
-
   const handlePerkRemove = (perkIdToRemove: number) => {
     setSelectedPerks((prev) => prev.filter((p) => p.id !== perkIdToRemove));
   };
 
+  const handleTogglePerk = useCallback(
+    (perkToToggle: Perk) => {
+      setSelectedPerks((currentPerks) => {
+        const isAlreadySelected = currentPerks.some(
+          (p) => p.id === perkToToggle.id
+        );
+
+        if (isAlreadySelected) {
+          return currentPerks.filter((p) => p.id !== perkToToggle.id);
+        }
+
+        if (currentPerks.length < maxPerks) {
+          return [...currentPerks, perkToToggle];
+        }
+        return currentPerks;
+      });
+    },
+    [maxPerks]
+  );
+
   return {
     selectedPerks,
-    handlePerkSelect,
+    handleTogglePerk,
     handlePerkRemove,
     isLimitReached,
   };

@@ -1,7 +1,8 @@
 import { useLocale, useTranslations } from "next-intl";
-import { ChangeEvent } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useNavigation } from "@/common/context/NavigationContext";
+import LanguageDropdown from "./LanguageDropdown";
 
 export default function LanguageSwitcher() {
   const t = useTranslations("nav");
@@ -9,28 +10,54 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const { isPending, startTransition } = useNavigation();
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = e.target.value;
+  const handleChange = (nextLocale: string) => {
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });
     });
   };
 
+  const toggleDropdown = () => {
+    if (!isPending) {
+      setIsOpen(!isOpen);
+    }
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [wrapperRef]);
+
+  const languageOptions = [
+    { value: "en", label: "🇪🇳 English" },
+    { value: "es", label: "🇪🇸 Español" },
+    { value: "fr", label: "🇫🇷 Français" },
+    { value: "ru", label: "🇷🇺 Русский" },
+  ];
+
   return (
-    <div className="relative">
-      <select
-        defaultValue={locale}
-        onChange={handleChange}
+    <div ref={wrapperRef}>
+      <LanguageDropdown
+        options={languageOptions}
+        currentLocale={locale}
+        isOpen={isOpen}
+        onToggle={toggleDropdown}
+        onSelect={handleChange}
+        label={t("selector.label")}
         disabled={isPending}
-        className="bg-gray-100 border px-2 py-1 rounded text-black cursor-pointer"
-        aria-label={t("selector.label")}
-      >
-        <option value="en">🇪🇳 English</option>
-        <option value="es">🇪🇸​ Español</option>
-        <option value="fr">🇫🇷 Français</option>
-        <option value="ru">🇷🇺 Русский</option>
-      </select>
+      />
     </div>
   );
 }

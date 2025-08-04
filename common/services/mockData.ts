@@ -3,7 +3,7 @@ import {
   SurvivorApiData,
   Perk,
   ROLES,
-} from "@/common/types/GeneralTypes";
+} from "@/common/types/GeneralApiTypes";
 
 export const mockKillers: KillerApiData[] = [
   {

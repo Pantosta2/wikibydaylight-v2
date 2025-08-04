@@ -1,4 +1,4 @@
-import type { Perk } from "../../../common/types/GeneralTypes";
+import type { Perk } from "../../../common/types/GeneralApiTypes";
 import PerkCard from "./PerkCard";
 import { AsyncContent } from "@/common/components/AsyncContent";
 

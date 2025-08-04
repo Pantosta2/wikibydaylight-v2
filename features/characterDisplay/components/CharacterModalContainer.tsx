@@ -2,7 +2,10 @@
 
 import { useCharacterPerks } from "@/features/characterDisplay/hooks/useCharacterPerks";
 import { useKillerPower } from "@/features/characterDisplay/hooks/useKillerPower";
-import type { CharacterProfileData, ROLES } from "@/common/types/GeneralTypes";
+import type {
+  CharacterProfileData,
+  ROLES,
+} from "@/common/types/GeneralApiTypes";
 import CharacterModal from "./CharacterModal";
 
 interface CharacterModalContainerProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslations } from "next-intl";
-import { ROLES } from "@/common/types/GeneralTypes";
+import { ROLES } from "@/common/types/GeneralApiTypes";
 type RoleForSelection = "survivor" | "killer";
 
 interface RoleSelectionProps {

@@ -4,8 +4,8 @@ import userEvent from "@testing-library/user-event";
 import DisplayCharacterData from "@/features/characterDisplay/components/DisplayCharacterData";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/en.json";
-import type { CharacterProfileData } from "@/common/types/GeneralTypes";
-import { ROLES } from "@/common/types/GeneralTypes";
+import type { CharacterProfileData } from "@/common/types/GeneralApiTypes";
+import { ROLES } from "@/common/types/GeneralApiTypes";
 
 vi.mock(
   "@/features/characterDisplay/components/CharacterModalContainer",

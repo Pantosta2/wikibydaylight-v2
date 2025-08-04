@@ -1,4 +1,4 @@
-import type { Perk } from "../../../common/types/GeneralTypes";
+import type { Perk } from "../../../common/types/GeneralApiTypes";
 import { useTranslations } from "next-intl";
 
 interface PerkSlotProps {

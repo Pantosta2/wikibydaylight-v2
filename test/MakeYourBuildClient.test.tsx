@@ -4,7 +4,7 @@ import MakeYourBuildClient from "@/features/perkBuilder/components/MakeYourBuild
 import userEvent from "@testing-library/user-event";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/en.json";
-import type { Perk } from "@/common/types/GeneralTypes";
+import type { Perk } from "@/common/types/GeneralApiTypes";
 
 const mockSurvivorPerks: Perk[] = [
   {

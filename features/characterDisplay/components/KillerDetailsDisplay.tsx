@@ -1,7 +1,7 @@
 import type {
   KillerApiData,
   PowerDetails,
-} from "../../../common/types/GeneralTypes";
+} from "../../../common/types/GeneralApiTypes";
 import { useTranslations } from "next-intl";
 import { AsyncContent } from "@/common/components/AsyncContent";
 

@@ -5,7 +5,7 @@ import type { AxiosResponse } from "axios";
 import type {
   CharacterProfileData,
   CharacterListEnvelope,
-} from "@/common/types/GeneralTypes";
+} from "@/common/types/GeneralApiTypes";
 
 export function useCharacterList(
   fetchFunctionFactory: () => Promise<AxiosResponse<CharacterListEnvelope>>

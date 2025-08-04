@@ -1,5 +1,5 @@
 import React from "react";
-import type { Perk } from "@/common/types/GeneralTypes";
+import type { Perk } from "@/common/types/GeneralApiTypes";
 import { useTranslations } from "next-intl";
 
 interface PerkCardProps {

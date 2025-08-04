@@ -4,7 +4,7 @@ import DisplayCharacterData from "@/features/characterDisplay/components/Display
 import * as mockApi from "@/common/services/mockApi.service";
 import { getKillers } from "@/common/services/dbdApi.service";
 import PageLayout from "@/common/components/layout/PageLayout";
-import { ROLES } from "@/common/types/GeneralTypes";
+import { ROLES } from "@/common/types/GeneralApiTypes";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 

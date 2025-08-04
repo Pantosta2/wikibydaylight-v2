@@ -1,7 +1,7 @@
 "use client";
 
 import { useReducer, useMemo } from "react";
-import { Perk, ROLES } from "@/common/types/GeneralTypes";
+import { Perk, ROLES } from "@/common/types/GeneralApiTypes";
 
 type RoleForSelection = "survivor" | "killer";
 

@@ -7,7 +7,7 @@ import type {
   CharacterProfileData,
   ApiResponse,
   ROLES,
-} from "../types/GeneralTypes";
+} from "../types/GeneralApiTypes";
 
 export const getKillers = async (): Promise<
   AxiosResponse<ApiResponse<CharacterProfileData[]>>

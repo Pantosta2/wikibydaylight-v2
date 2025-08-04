@@ -1,6 +1,6 @@
 "use client";
 
-import { ROLES } from "../types/GeneralTypes";
+import { ROLES } from "../types/GeneralApiTypes";
 
 export type ActiveSide = "survivor" | "killer";
 

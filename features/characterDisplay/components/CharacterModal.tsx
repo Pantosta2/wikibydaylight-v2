@@ -9,7 +9,7 @@ import {
   Perk,
   PowerDetails,
   ROLES,
-} from "@/common/types/GeneralTypes";
+} from "@/common/types/GeneralApiTypes";
 
 interface CharacterModalProps {
   character: CharacterProfileData;

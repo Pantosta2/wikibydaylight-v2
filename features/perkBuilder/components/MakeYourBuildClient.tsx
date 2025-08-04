@@ -3,7 +3,7 @@
 import { usePerkFiltering } from "@/features/perkBuilder/hooks/usePerkFiltering";
 import { usePerkSelection } from "@/features/perkBuilder/hooks/usePerkSelection";
 import { useTranslations } from "next-intl";
-import type { Perk } from "@/common/types/GeneralTypes";
+import type { Perk } from "@/common/types/GeneralApiTypes";
 
 import RoleSelection from "./RoleSelection";
 import PerkSearchInput from "./PerkSearchInput";

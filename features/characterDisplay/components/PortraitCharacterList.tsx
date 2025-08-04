@@ -1,6 +1,6 @@
 "use client";
 
-import type { CharacterProfileData } from "@/common/types/GeneralTypes";
+import type { CharacterProfileData } from "@/common/types/GeneralApiTypes";
 import { AsyncContent } from "@/common/components/AsyncContent";
 
 type PortraitListProps = {

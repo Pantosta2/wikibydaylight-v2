@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import type { Perk } from "@/common/types/GeneralTypes";
+import type { Perk } from "@/common/types/GeneralApiTypes";
 import { getCharacterPerks } from "../../../common/services/dbdApi.service";
-import { ROLES } from "@/common/types/GeneralTypes";
+import { ROLES } from "@/common/types/GeneralApiTypes";
 
 type UseCharacterPerksProps = {
   characterRole: typeof ROLES.KILLER | typeof ROLES.SURVIVOR;

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { getKillerPowerDetails } from "../../../common/services/dbdApi.service";
-import { PowerDetails, ROLES } from "@/common/types/GeneralTypes";
+import { PowerDetails, ROLES } from "@/common/types/GeneralApiTypes";
 
 interface UseKillerPowerParams {
   characterRole: "killer" | "survivor";

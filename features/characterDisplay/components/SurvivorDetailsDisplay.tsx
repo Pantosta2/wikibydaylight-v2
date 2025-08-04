@@ -1,4 +1,4 @@
-import type { SurvivorApiData } from "../../../common/types/GeneralTypes";
+import type { SurvivorApiData } from "../../../common/types/GeneralApiTypes";
 
 interface SurvivorDetailsProps {
   survivor: SurvivorApiData;

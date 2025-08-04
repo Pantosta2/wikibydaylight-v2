@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import type { Perk, ROLES } from "../../../common/types/GeneralTypes";
+import type { Perk, ROLES } from "../../../common/types/GeneralApiTypes";
 import { fetchAllPerksForRole } from "@/features/perkBuilder/services/perks.service";
 
 export function useCombinedRolePerks({

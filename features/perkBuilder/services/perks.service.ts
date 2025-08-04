@@ -3,7 +3,7 @@ import {
   getSurvivors,
   getCharacterPerks,
 } from "@/common/services/dbdApi.service";
-import { Perk, ROLES, type Role } from "@/common/types/GeneralTypes";
+import { Perk, ROLES, type Role } from "@/common/types/GeneralApiTypes";
 
 export async function fetchAllPerksForRole(role: Role): Promise<Perk[]> {
   try {

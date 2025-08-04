@@ -1,5 +1,5 @@
 import { mockKillers, mockSurvivors, mockPerks } from "./mockData";
-import { ROLES } from "@/common/types/GeneralTypes";
+import { ROLES } from "@/common/types/GeneralApiTypes";
 import { AxiosResponse, InternalAxiosRequestConfig } from "axios";
 const createApiResponse = (data: any): Promise<AxiosResponse> => {
   const mockResponse: AxiosResponse = {

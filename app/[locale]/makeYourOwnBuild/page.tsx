@@ -3,7 +3,7 @@ import { fetchAllPerksForRole } from "@/features/perkBuilder/services/perks.serv
 import MakeYourBuildClient from "@/features/perkBuilder/components/MakeYourBuildClient";
 import * as mockApi from "@/common/services/mockApi.service";
 import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
-import { ROLES } from "@/common/types/GeneralTypes";
+import { ROLES } from "@/common/types/GeneralApiTypes";
 import PageLayout from "@/common/components/layout/PageLayout";
 
 const isDevelopment = process.env.NODE_ENV === "development";

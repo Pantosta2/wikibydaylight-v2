@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { DefinedImagesForBackground } from "@/common/assets/DefinedImagesForBackground";
 import { ScreenBorderGlow, ActiveSide } from "./ScreenBorderGlow";
-import { ROLES } from "../types/GeneralTypes";
+import { ROLES } from "../types/GeneralApiTypes";
 
 export function AnimatedRoleSection() {
   const [activeSide, setActiveSide] = useState<ActiveSide>(ROLES.KILLER);

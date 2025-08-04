@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import type { Perk } from "../../../common/types/GeneralTypes";
+import type { Perk } from "../../../common/types/GeneralApiTypes";
 import PerkSlot from "./PerkSlot";
 
 const slotSizeDefinitions = {

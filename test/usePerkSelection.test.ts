@@ -1,6 +1,6 @@
 import { expect, describe, it } from "vitest";
 import { renderHook, act } from "@testing-library/react";
-import type { Perk } from "@/common/types/GeneralTypes";
+import type { Perk } from "@/common/types/GeneralApiTypes";
 import { usePerkSelection } from "@/features/perkBuilder/hooks/usePerkSelection";
 
 describe("usePerkSelection", () => {

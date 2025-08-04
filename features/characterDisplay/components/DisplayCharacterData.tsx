@@ -3,7 +3,10 @@
 import PortraitCharacterList from "./PortraitCharacterList";
 import CharacterModalContainer from "./CharacterModalContainer";
 import { useModal } from "@/common/hooks/useModal";
-import type { ROLES, CharacterProfileData } from "@/common/types/GeneralTypes";
+import type {
+  ROLES,
+  CharacterProfileData,
+} from "@/common/types/GeneralApiTypes";
 
 type DisplayCharacterDataProps = {
   initialCharacters: CharacterProfileData[];

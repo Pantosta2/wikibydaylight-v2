@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useNavigation } from "@/common/context/NavigationContext";
 import LanguageDropdown from "./LanguageDropdown";
+import { setLanguageCookie } from "@/utility";
 
 export default function LanguageSwitcher() {
   const t = useTranslations("nav");
@@ -14,6 +15,8 @@ export default function LanguageSwitcher() {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (nextLocale: string) => {
+    setLanguageCookie(nextLocale);
+
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });
     });
